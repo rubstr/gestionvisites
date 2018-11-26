@@ -1,0 +1,26 @@
+.navbar {
+    padding: 8px 8px;
+    box-shadow: 0 2px 0 0 #666666;
+    font-family: Montserrat,sans-serif;
+}
+
+body{
+    background-color: #363636;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.foot{
+    padding: 2rem 2rem;
+    background-color: #ffdd57;
+    font-family: Montserrat,sans-serif;
+}
+
+.header{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
