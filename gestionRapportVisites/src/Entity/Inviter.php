@@ -6,6 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\InviterRepository")
+ * @ORM\Table(uniqueConstraints={
+ *       @ORM\UniqueConstraint(name="praticien_invitation_unique", columns={"activite_compl_id","praticien_id"})
+ *       })
  */
 class Inviter
 {
