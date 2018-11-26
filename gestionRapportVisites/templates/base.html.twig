@@ -7,15 +7,16 @@
         </title>
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
 
         <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <div class="container">
+        <div class="container is-fluid">
             <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="{{asset("images/gsb.png")}}" width="75" height="28">
+                <a class="navbar-item" href="#">
+                    <img src="{{asset("images/gsb.png")}}" width="75" height="28">&nbsp&nbsp
                 </a>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -27,20 +28,41 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
+
                     <a class="navbar-item">
-                        Accueil
+                <span class="icon">
+                <i class="fas fa-home"></i>
+                </span>
+                <span>
+                    Accueil
+                </span>
                     </a>
 
                     <a class="navbar-item">
-                        Rapports
+                <span class="icon">
+                <i class="fas fa-file-signature"></i>
+                </span>
+                <span>
+                    Rapports
+                </span>
                     </a>
 
                     <a class="navbar-item">
-                        Medicaments
+                <span class="icon">
+                <i class="fas fa-capsules"></i>
+                </span>
+                <span>
+                    Medicaments
+                </span>
                     </a>
 
                     <a class="navbar-item">
-                        Praticiens
+                <span class="icon">
+                <i class="fas fa-user"></i>
+                </span>
+                <span>
+                    Praticiens
+                </span>
                     </a>
 
                         </div>
@@ -50,9 +72,13 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
+<<<<<<< HEAD
                             <a class="button is-light">
                                 <strong>S'inscrire</strong>
                             </a>
+=======
+
+>>>>>>> 3b4900896264a3f4e483252787bfb3767a1e8838
                             <a class="button is-primary">
                                 Se connecter
                             </a>
