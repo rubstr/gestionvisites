@@ -1,5 +1,5 @@
 .navbar {
-    padding: 1rem 2rem;
+    padding: 8px 8px;
     box-shadow: 0 2px 0 0 #666666;
     font-family: Montserrat,sans-serif;
 }
@@ -13,12 +13,14 @@ body{
 
 }
 
-.navbar-item {
-    margin-right: 2%;
-}
 
 .foot{
     padding: 2rem 2rem;
     background-color: #ffdd57;
     font-family: Montserrat,sans-serif;
+}
+
+.header{
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
