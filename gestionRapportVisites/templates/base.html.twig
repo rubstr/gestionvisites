@@ -12,10 +12,10 @@
     </head>
     <body>
 
-        <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
             <div class="container is-fluid">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="#"><img src="{{asset("images/gsb.png")}}" width="75" height="28">&nbsp&nbsp</a>
+                    <a class="navbar-item" href="#"><img src="{{asset("images/gsb.png")}}" width="75" height="28"></a>
                         
                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="false"></span>
@@ -28,7 +28,7 @@
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
 
-                        <a class="navbar-item">
+                        <a href="{{ path("home") }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-home"></i>
                             </span>
@@ -37,7 +37,7 @@
                             </span>
                         </a>
 
-                        <a class="navbar-item">
+                        <a href="{{ path("listerapport") }}" class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-file-signature"></i>
                             </span>
