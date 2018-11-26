@@ -1,6 +1,7 @@
 .navbar {
     padding: 8px 8px;
     /*box-shadow: 0 2px 0 0 #969595;*/
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: Montserrat,sans-serif;
 }
 
@@ -21,6 +22,14 @@ body{
 }
 
 .corp{
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 4%;
+    padding-bottom: 6%;
+}
+
+.hr {
+    background-color: #d1d1d1c0;
+    border: none;
+    display: block;
+    height: 1.5px;
+    margin: 3rem 0;
 }
