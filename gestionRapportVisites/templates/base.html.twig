@@ -13,7 +13,7 @@
     <body>
 
         <nav class="navbar is-info" role="navigation" aria-label="main navigation">
-            <div class="container is-fluid">
+            <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="#"><img src="{{asset("images/gsb.png")}}" width="75" height="28"></a>
                         
@@ -75,6 +75,32 @@
                             Se connecter
                         </a>
                     </div>
+                    
+                </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                            <span class="icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </span>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                        <span class="icon has-text-warning">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    <a class="navbar-item">
+                        <span class="icon has-text-info">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    <a class="navbar-item">
+                        <span class="icon has-text-danger">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,7 +109,7 @@
 
 {% block body %}{% endblock %}
 
-<footer class="foot">
+<footer class="foot has-text-white">
     <div class="container">
         <a href="#">Haut de page</a>
         <p>Pierron, Hanna, Richard, Sautron. 2018-2019</p>
