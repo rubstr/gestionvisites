@@ -25,18 +25,30 @@ class PraticienController extends AbstractController
     /**
      * @Route("/praticien/new", name="praticien_create")
      */
-        public function form(Praticien $praticien = null, Request $request, ObjectManager $manager) {
-        
-            if(!$praticien) {
-                $praticien = new Praticien();
-            }
-            
-            $form =$this->createForm(PraticienType::class,$praticien);
-    
-            $form->handleRequest($request);
-                $manager->persist($praticien);
-                $manager->flush();
-    
-                return $this->redirectToRoute('praticien', ['id' => $praticien->getId()]);            
+    public function form(Praticien $praticien = null, $ajout=false, ObjectManager $manager, Request $request)
+    {
+        if(!$praticien)
+        {
+            $praticien = new Praticien();
+            $ajout = true;  //Si = true, le contact est ajouté et non modifié
+        }
+
+        $form = $this->createForm(PraticienType::class, $praticien); //Création du form
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($praticien);
+            $manager->flush();
+
+           
+            return $this->redirectToRoute('praticien');
+        }
+
+        return $this->render('praticien/newpraticien.html.twig', [
+            'formPraticien' => $form->createView(),
+            'ajout' => $ajout
+        ]);         
     }
 }
