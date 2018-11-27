@@ -1,48 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste rapports{% endblock %}
+{% block title %}Liste medicaments{% endblock %}
 
 {% block body %}
     <div class="container corp">
-
-
-        <div class="columns">
-        <div class="column is-1">
-        </div>
-        <div class="column">
-        <h1 class="title is-3 has-text-white">Liste des rapports de visite</h1>
+        <h1 class="title is-3 has-text-white">Liste des médicaments</h1>
         <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
-        <a class="button is-primary">
-            
-                            <span class="icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                            <span>
-                                Ajouter un rapport
-                            </span>
-        </a>
-        </div>
-        <div class="column is-1">
-        </div>
-        </div>
+        <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
 
-        {% for rapport in rapports %}
-
-                <div class="columns">
-                <div class="column is-1">
-                </div>
-                <div class="column">
+        {% for medicament in medicaments %}
         <div class="box">
             <article class="media">
-
-
 
                 <div class="media-content">
                     <div class="content">
                         <p>
-                            <strong>{{ rapport.rapMotif }}</strong>
+                            <strong>N° {{ medicament.id }} : {{ medicament.libelle }}</strong>
                             <br>
-                            {{ rapport.rapBilan }}
+                            Dépot légal : {{ medicament.medDepotLegal }}
+                            <br>
+                            Date d'ajout : {{ medicament.dateAjout | date("d/m/Y") }}
+                            <br>
+                            {{ medicament.description }}
                         </p>
                     </div>
                     <nav class="level is-mobile">
@@ -62,12 +41,6 @@
                 </div>
             </article>
         </div>
-                </div>
-                <div class="column is-1">
-                </div>
-                </div>
-                <br>
-
         {% endfor %}
 
     </div>
