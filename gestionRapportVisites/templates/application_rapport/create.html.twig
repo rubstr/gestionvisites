@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste medicaments{% endblock %}
+
+{% block body %}
+    <div class="container corpform">
+
+        <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column">
+            {% if editMode %}
+                <h1 class="title is-3 has-text-white has-text-centered">Modifier un rapport de visite</h1>
+            {% else %}
+                <h1 class="title is-3 has-text-white has-text-centered">Ajouter un rapport de visite</h1>
+            {% endif %}
+                <h1 class="subtitle is-5 has-text-white has-text-centered">----------------------------</h1>
+        </div>
+        <div class="column is-2"></div>
+        </div>
+
+        <div class="columns">
+        <div class="column is-2">
+        </div>
+        <div class="column">
+                    <div class="box">
+            {{ form_start(formRapportVisite) }}
+                {{ form_row(formRapportVisite.rap_motif) }}
+                <br>
+                {{ form_row(formRapportVisite.rap_bilan) }}
+                <button type="submit" class="button is-primary" style="margin-top:6%;">      
+                {% if editMode %}
+                    Enregistrer les modifications
+                {% else %}
+                    Ajouter le rapport
+                {% endif %}
+                </button>
+
+                {{ form_end(formRapportVisite) }}
+        </div>
+        </div>
+        <div class="column is-2">
+        </div>
+        </div>
+        
+
+
+    </div>
+{% endblock %}
