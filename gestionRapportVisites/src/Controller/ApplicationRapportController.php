@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\RapportVisite;
+use App\Form\RapportVisiteType;
 use App\Repository\RapportVisiteRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -29,7 +33,31 @@ class ApplicationRapportController extends AbstractController
         ]);
 
     }
-    public function suprimerRapport(){}
+
+    /**
+     * @Route("/create", name="ajoutrapport")
+     * @route("/{id}/edit",  name="modifrapport")
+     */
+    public function form(RapportVisite $rapport=null, Request $request, ObjectManager $manager){
+        if (!$rapport) {
+            $rapport = new RapportVisite();
+        }
+        $form = $this->createForm(RapportVisiteType::class, $rapport);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($rapport);
+            $manager->flush();
+
+            return $this->redirectToRoute('listerapport');
+        }
+
+        return $this->render('application_rapport/create.html.twig',[
+            'formRapportVisite' => $form->createView(),
+            'editMode' => $rapport->getId()!== null
+        ]);
+    }
 
 
 }
