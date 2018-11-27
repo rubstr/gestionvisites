@@ -2,14 +2,11 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 use App\Entity\Praticien;
+use App\Entity\Medicament;
 use App\Form\PraticienType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
-=======
-use App\Entity\Medicament;
->>>>>>> 18cebda7fb31dcb994ed7452a6c02e83a6837db7
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
