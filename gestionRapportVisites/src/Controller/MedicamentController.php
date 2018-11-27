@@ -25,12 +25,14 @@ class MedicamentController extends AbstractController
 
     /**
      * @Route("/medicament/ajouter", name="ajouterMedicament")
+     * @Route("/medicament/{id}/modifier", name="modifierMedicament")
      */
-    public function form(Medicament $medicament = null, ObjectManager $manager, Request $request)
+    public function form(Medicament $medicament = null, $ajout=false, ObjectManager $manager, Request $request)
     {
         if(!$medicament)
         {
             $medicament = new Medicament();
+            $ajout = true;  //Si = true, le contact est ajouté et non modifié
         }
 
         $form = $this->createForm(MedicamentType::class, $medicament); //Création du form
@@ -49,9 +51,22 @@ class MedicamentController extends AbstractController
 
         return $this->render('medicament/formMedicament.html.twig', [
             'formMedicament' => $form->createView(),
+            'ajout' => $ajout
         ]);
     }
 
+    /**
+     * @Route("/medicament/{id}/supprimer", name="supprimerMedicament")
+     */
+    public function remove(MedicamentRepository $repo, $id, ObjectManager $manager)
+    {
+        $medicament = $repo->find($id);
+        dump($medicament);
+        $manager->remove($medicament);
+        $manager->flush();
+
+        return $this->redirectToRoute('medicament');
+    }
 
 
 }
