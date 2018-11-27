@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste medicaments{% endblock %}
+
+{% block body %}
+    <div class="container corp">
+        <h1 class="title is-3 has-text-white">Liste des médicaments</h1>
+        <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
+        <a href="" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
+
+        
+        <div class="box">
+            {{ form_start(formMedicament) }}
+                {{ form_row(formMedicament.med_depot_legal) }}
+                {{ form_row(formMedicament.libelle) }}
+                {{ form_row(formMedicament.description) }}
+                <button type="submit" class="button is-primary" style="margin-top:6%;">Ajouter / Modifier</button>
+                {{ form_end(formMedicament) }}
+        </div>
+
+    </div>
+{% endblock %}
