@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RapportVisiteRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ApplicationRapportController extends AbstractController
 {
@@ -16,4 +17,18 @@ class ApplicationRapportController extends AbstractController
             'controller_name' => 'ApplicationRapportController',
         ]);
     }
+
+    /**
+     * @Route("/liste_rapport", name="listerapport")
+     */
+    public function Rapports(RapportVisiteRepository $repo){
+
+        return $this->render('application_rapport/listerapport.html.twig', [
+            'controller_name' => "SiteController",
+            'rapports' => $repo->findAll()
+        ]);
+
+    }
+
+
 }

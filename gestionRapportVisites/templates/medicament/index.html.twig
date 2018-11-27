@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste medicaments{% endblock %}
+
+{% block body %}
+    <div class="container corp">
+        <h1 class="title is-3 has-text-white">Liste des médicaments</h1>
+        <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
+        <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
+
+        {% for medicament in medicaments %}
+        <div class="box">
+            <article class="media">
+
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>N° {{ medicament.id }} : {{ medicament.libelle }}</strong>
+                            <br>
+                            Dépot légal : {{ medicament.medDepotLegal }}
+                            <br>
+                            Date d'ajout : {{ medicament.dateAjout | date("d/m/Y") }}
+                            <br>
+                            {{ medicament.description }}
+                        </p>
+                    </div>
+                    <nav class="level is-mobile">
+                        <div class="level-left">
+                            <a class="level-item" aria-label="modifier">
+                                <span class="icon is-small">
+                                    <i class="fas fa-wrench"></i>
+                                </span>
+                            </a>
+                            <a class="level-item" aria-label="suprimer">
+                                <span class="icon is-small">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

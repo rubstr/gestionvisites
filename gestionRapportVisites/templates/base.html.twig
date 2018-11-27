@@ -7,91 +7,114 @@
         </title>
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
 
-        <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-        <div class="container is-fluid">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img src="{{asset("images/gsb.png")}}" width="75" height="28">&nbsp&nbsp
-                </a>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true">Accueil</span>
-                    <span aria-hidden="true">Rapports</span>
-                    <span aria-hidden="true">Medicaments</span>
-                    <span aria-hidden="true">Praticiens</span>
-                    
-                </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-
-                    <a class="navbar-item">
-                <span class="icon">
-                <i class="fas fa-home"></i>
-                </span>
-                <span>
-                    Accueil
-                </span>
-                    </a>
-
-                    <a class="navbar-item">
-                <span class="icon">
-                <i class="fas fa-file-signature"></i>
-                </span>
-                <span>
-                    Rapports
-                </span>
-                    </a>
-
-                    <a class="navbar-item">
-                <span class="icon">
-                <i class="fas fa-capsules"></i>
-                </span>
-                <span>
-                    Medicaments
-                </span>
-                    </a>
-
-                    <a class="navbar-item">
-                <span class="icon">
-                <i class="fas fa-user"></i>
-                </span>
-                <span>
-                    Praticiens
-                </span>
-                    </a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary">
-                                Se connecter
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        </nav>
-
-        {% block body %}{% endblock %}
-
-        <footer class="foot">
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
             <div class="container">
-                <a href="#">Haut de page</a>
-                <p>Pierron, Hanna, Richard, Sautron. 2018-2019</p>
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#"><img src="{{asset("images/gsb.png")}}" width="75" height="28"></a>
+                        
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="false"></span>
+                        <span aria-hidden="false"></span>
+                        <span aria-hidden="false"></span>
+
+                    </a>
+                </div>
+
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+
+                        <a href="{{ path("home") }}" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span>
+                                &nbspAccueil
+                            </span>
+                        </a>
+
+                        <a href="{{ path("listerapport") }}" class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-file-signature"></i>
+                            </span>
+                            <span>
+                                &nbspRapports
+                            </span>
+                        </a>
+
+                        <a href="{{ path("medicament") }}"class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-capsules"></i>
+                            </span>
+                            <span>
+                                &nbspMedicaments
+                            </span>
+                        </a>
+
+                        <a class="navbar-item">
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <span>
+                                &nbspPraticiens
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
             </div>
-        </footer>
-        {% block javascripts %}{% endblock %}
-    </body>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-warning is-outlined is-rounded">
+                            Se connecter
+                        </a>
+                    </div>
+                    
+                </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                            <span class="icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </span>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                        <span class="icon has-text-warning">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    <a class="navbar-item">
+                        <span class="icon has-text-info">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    <a class="navbar-item">
+                        <span class="icon has-text-danger">
+                            <i class="fas fa-circle"></i>
+                        </span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% block body %}{% endblock %}
+
+<footer class="foot has-text-white">
+    <div class="container">
+        <a href="#">Haut de page</a>
+        <p>Pierron, Hanna, Richard, Sautron. 2018-2019</p>
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
