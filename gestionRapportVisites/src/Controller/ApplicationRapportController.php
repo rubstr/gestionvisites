@@ -29,6 +29,7 @@ class ApplicationRapportController extends AbstractController
         ]);
 
     }
+    public function suprimerRapport(){}
 
 
 }
