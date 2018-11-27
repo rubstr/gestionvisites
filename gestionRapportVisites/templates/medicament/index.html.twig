@@ -4,66 +4,79 @@
 
 {% block body %}
     <div class="container corp">
-                    <div class="columns">
-                <div class="column is-1">
-                </div>
-                <div class="column">
-                            <h1 class="title is-3 has-text-white">Liste des médicaments</h1>
-        <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
-        <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
-                </div>
-                <div class="column is-1">
-                </div>
-                </div>
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column">
+                <a href=""><h1 class="title is-3 has-text-white">Liste des médicaments</h1></a>
+                <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
+            </div>
+            <div class="column is-1">
+            </div>
+        </div>
 
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column is-3">
+                <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
+            </div>
+            <div class="column is-3 is-offset-3">
+                
+                    {{ form_start(searchForm) }}
+                    {{ form_row(searchForm.search) }}
+                
+            </div>
+            <div class="column is-1">
+                <button type="submit" class="button is-primary"><i class="fas fa-search"></i></button>
+                {{ form_end(searchForm) }}
+            </div>
+            <div class="column is-1">
+            </div>
+        </div>
 
         {% for medicament in medicaments %}
-                <div class="columns">
+            <div class="columns">
                 <div class="column is-1">
             
                 </div>
                 <div class="column">
-                            <div class="box">
-            <article class="media">
-
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>N° {{ medicament.id }} : {{ medicament.libelle }}</strong>
-                            <br>
-                            Dépot légal : {{ medicament.medDepotLegal }}
-                            <br>
-                            Date d'ajout : {{ medicament.dateAjout | date("d/m/Y") }}
-                            <br>
-                            {{ medicament.description }}
-                        </p>
-                    </div>
-                    <nav class="level is-mobile">
-                        <div class="level-left">
-                            <a href="{{ path("modifierMedicament", {"id" : medicament.id }) }}"class="level-item" aria-label="modifier">
-                                <span class="icon is-small">
-                                    <i class="fas fa-wrench"></i>
-                                </span>
-                            </a>
-                            <a href="{{ path("supprimerMedicament", {"id" : medicament.id }) }}" class="level-item" aria-label="suprimer">
-                                <span class="icon is-small">
-                                    <i class="fas fa-times"></i>
-                                </span>
-                            </a>
+                    <div class="box">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>N° {{ medicament.id }} : {{ medicament.libelle }}</strong>
+                                <br>
+                                Dépot légal : {{ medicament.medDepotLegal }}
+                                <br>
+                                Date d'ajout : {{ medicament.dateAjout | date("d/m/Y") }}
+                                <br>
+                                {{ medicament.description }}
+                            </p>
                         </div>
-                    </nav>
-                </div>
-            </article>
+                        <nav class="level is-mobile">
+                            <div class="level-left">
+                                <a href="{{ path("modifierMedicament", {"id" : medicament.id }) }}"class="level-item" aria-label="modifier">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-wrench"></i>
+                                    </span>
+                                </a>
+                                <a href="{{ path("supprimerMedicament", {"id" : medicament.id }) }}" class="level-item" aria-label="suprimer">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
         </div>
-                </div>
-                
-
-                <div class="column is-1">
-                
-                </div>
-                </div>
-                <br>
-
+        <div class="column is-1">
+        </div>
+        </div>
+    <br>
         {% endfor %}
 
     </div>

@@ -19,6 +19,17 @@ class MedicamentRepository extends ServiceEntityRepository
         parent::__construct($registry, Medicament::class);
     }
 
+    public function findManyByText($search)     
+    {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.libelle LIKE :search')
+            ->orWhere('m.med_depot_legal LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
+    
+
     // /**
     //  * @return Medicament[] Returns an array of Medicament objects
     //  */
