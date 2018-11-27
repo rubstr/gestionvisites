@@ -19,6 +19,18 @@ class ActiviteComplRepository extends ServiceEntityRepository
         parent::__construct($registry, ActiviteCompl::class);
     }
 
+    /**
+     * @Return Retourne une liste d'activite
+     */
+    public function findManyByText($search)     
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.lieu LIKE :search')
+            ->orWhere('a.theme LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return ActiviteCompl[] Returns an array of ActiviteCompl objects
     //  */
