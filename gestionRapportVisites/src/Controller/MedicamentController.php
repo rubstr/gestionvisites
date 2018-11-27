@@ -8,6 +8,7 @@ use App\Repository\MedicamentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MedicamentController extends AbstractController
@@ -15,11 +16,35 @@ class MedicamentController extends AbstractController
     /**
      * @Route("/medicament", name="medicament")
      */
-    public function index(MedicamentRepository $repo)
+    public function index(MedicamentRepository $repo, Request $request)
     {
+        $form = $this->createFormBuilder(array('message' => 'search'))
+        ->add('search', TextType::class, [
+            'attr' => [
+                'class' => 'input is-hovered',
+                'placeholder' => 'Rechercher par le nom ou le dépot légal'
+            ],
+            'label' => false,
+            'required' => false
+        ])
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            return $this->render('medicament/index.html.twig', [
+                'controller_name' => 'MedicamentController',
+                'medicaments' =>  $repo->findManyByText($data['search']),
+                'searchForm' => $form->createView(),
+            ]);
+        }
+
         return $this->render('medicament/index.html.twig', [
             'controller_name' => 'MedicamentController',
             'medicaments' => $repo->findAll(),
+            'searchForm' => $form->createView()
         ]);
     }
 
