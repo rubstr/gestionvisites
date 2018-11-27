@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Praticien;
-use App\Entity\Medicament;
 use App\Form\PraticienType;
+use App\Repository\PraticienRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +15,11 @@ class PraticienController extends AbstractController
     /**
      * @Route("/praticien", name="praticien")
      */
-    public function index()
+    public function index(PraticienRepository $repo)
     {
         return $this->render('praticien/index.html.twig', [
             'controller_name' => 'PraticienController',
+            'praticiens' => $repo->findAll(),
         ]);
     }
     /**
