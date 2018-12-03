@@ -34,7 +34,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     role_hierarchy:
-         ROLE_VISITEUR: [ROLE_USER]
          ROLE_ADMIN: [ROLE_VISITEUR]
     access_control:
          
@@ -43,5 +42,5 @@ security:
          - { path: ^/medicament, roles: [ROLE_ADMIN] }
          - { path: ^/liste_rapport, roles: [ROLE_VISITEUR] }
          - { path: ^/praticien, roles: [ROLE_ADMIN] }
-         - { path: ^/, roles: ROLE_ADMIN }
+
     
