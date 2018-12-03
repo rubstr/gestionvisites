@@ -48,8 +48,5 @@ class InviterRepository extends ServiceEntityRepository
     }
     */
 
-    public function findParPraticien($id)
-    {
-        return $this->
-    }
+    
 }
