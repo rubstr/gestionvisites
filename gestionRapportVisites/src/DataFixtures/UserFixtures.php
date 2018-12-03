@@ -23,6 +23,7 @@ class UserFixtures extends Fixture
         $user = new User();
         $user->setIdentifiant('Liorleboss');
         $user->setPassword($this->encoder->encodePassword('test', null));
+        $user->setRoles(['ROLE_ADMIN']);
         
         $manager->persist($user);
         $manager->flush();
