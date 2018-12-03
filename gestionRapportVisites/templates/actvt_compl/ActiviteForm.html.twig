@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Activite{% endblock %}
+
+{% block body %}
+
+ <div class="container corp">
+        <h1 class="title is-3 has-text-white">Ajouter / Modifier un praticien</h1>
+        <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
+        
+        <div class="box">
+            {{ form_start(form) }}
+                {{ form_row(form.date) }}
+                {{ form_row(form.lieu) }}
+                {{ form_row(form.theme) }}
+                <button type="submit" class="button is-primary" style="margin-top:6%;">Ajouter / Modifier</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

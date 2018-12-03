@@ -86,7 +86,6 @@ class MedicamentController extends AbstractController
     public function remove(MedicamentRepository $repo, $id, ObjectManager $manager)
     {
         $medicament = $repo->find($id);
-        dump($medicament);
         $manager->remove($medicament);
         $manager->flush();
 
