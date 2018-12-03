@@ -134,4 +134,9 @@ class Praticien
 
         return $this;
     }
+
+    public function getFullName(): string
+    {
+            return $this->pra_prenom . " " . $this->pra_nom;
+    }
 }

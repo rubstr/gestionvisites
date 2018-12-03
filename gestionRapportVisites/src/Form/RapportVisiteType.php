@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Praticien;
 use App\Entity\RapportVisite;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -29,8 +31,16 @@ class RapportVisiteType extends AbstractType
                 ],
                 'label' => 'Motif'
             ])
-            /*->add('visiteur')
-            ->add('praticien')*/
+            /*->add('visiteur')*/
+            ->add('praticien', EntityType::class,[
+                'class' => Praticien::class,
+                'choice_label' => 'getFullName',
+                'attr' => [
+                    'class' => 'select is-medium is-rounded',
+                    'placeholder' => 'Motif du rapport'
+                ],
+                'label' => 'Motif'
+            ])
         ;
     }
 

@@ -8,7 +8,7 @@
         <div class="columns">
         <div class="column is-2"></div>
         <div class="column">
-            {% if editMode %}
+            {% if editMode == true %}
                 <h1 class="title is-3 has-text-white has-text-centered">Modifier un rapport de visite</h1>
             {% else %}
                 <h1 class="title is-3 has-text-white has-text-centered">Ajouter un rapport de visite</h1>
@@ -27,8 +27,9 @@
                 {{ form_row(formRapportVisite.rap_motif) }}
                 <br>
                 {{ form_row(formRapportVisite.rap_bilan) }}
+                {{ form_row(formRapportVisite.praticien) }}
                 <button type="submit" class="button is-primary" style="margin-top:6%;">      
-                {% if editMode %}
+                {% if editMode == true %}
                     Enregistrer les modifications
                 {% else %}
                     Ajouter le rapport

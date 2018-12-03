@@ -24,12 +24,12 @@
                     </div>
                     <nav class="level is-mobile">
                         <div class="level-left">
-                            <a class="level-item" aria-label="modifier">
+                            <a class="level-item" href="{{ path("praticien_modif", {"id" : praticien.id }) }}" aria-label="modifier">
                                 <span class="icon is-small">
                                     <i class="fas fa-wrench"></i>
                                 </span>
                             </a>
-                            <a class="level-item" aria-label="suprimer">
+                            <a class="level-item" href="{{ path("praticien_suppr", {"id" : praticien.id }) }}" aria-label="suprimer">
                                 <span class="icon is-small">
                                     <i class="fas fa-times"></i>
                                 </span>
