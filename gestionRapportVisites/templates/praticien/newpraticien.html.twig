@@ -1,5 +1,21 @@
-{{ form_start{formPraticien} }}
-    {{ form_row(formPraticien.pra_nom, {'attr': {'placeholder':"Nom du praticien"}}) }}
-    {{ form_row(formPraticien.pra_prenom, {'attr': {'placeholder':"Prénom du praticien"}}) }}
-<button type="submit" class="btn btn-success">Enregistrer le praticien</button>
-{{ form_end(formArticle)}}
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste praticiens{% endblock %}
+
+{% block body %}
+    <div class="container corp">
+        <h1 class="title is-3 has-text-white">{% if ajout == true %}Ajouter{% else %}Modifier{% endif %} un praticien</h1>
+        <h1 class="subtitle is-5 has-text-white">------------------------------------ </h1>
+        
+        <div class="box">
+
+{{ form_start(formPraticien) }}
+    {{ form_row(formPraticien.pra_nom, {'label':'Nom du praticien : ','attr': {'placeholder':"Nom"}}) }}
+    {{ form_row(formPraticien.pra_prenom, {'label':'Prénom du praticien : ','attr': {'placeholder':"Prénom"}}) }}
+    <button type="submit" class="button is-primary" style="margin-top:2%;">{% if ajout == true %}Ajouter le praticien{% else %}Modifier le praticien{% endif %}</button>
+{{ form_end(formPraticien)}}
+
+ </div>
+
+    </div>
+{% endblock %}
