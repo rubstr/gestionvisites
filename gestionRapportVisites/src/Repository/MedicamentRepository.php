@@ -19,6 +19,9 @@ class MedicamentRepository extends ServiceEntityRepository
         parent::__construct($registry, Medicament::class);
     }
 
+    /**
+     * @Return Retourne une liste de médicament
+     */
     public function findManyByText($search)     
     {
         return $this->createQueryBuilder('m')

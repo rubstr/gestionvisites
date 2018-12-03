@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste medicaments{% endblock %}
+{% block title %}Liste Activité Complémentaire{% endblock %}
 
 {% block body %}
     <div class="container corp">
@@ -8,7 +8,7 @@
             <div class="column is-1">
             </div>
             <div class="column">
-                <a href=""><h1 class="title is-3 has-text-white">Liste des médicaments</h1></a>
+                <a href=""><h1 class="title is-3 has-text-white">Liste des activités complémentaires prévues</h1></a>
                 <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
             </div>
             <div class="column is-1">
@@ -19,7 +19,7 @@
             <div class="column is-1">
             </div>
             <div class="column is-3">
-                <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
+                <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter évènement</span></a>
             </div>
             <div class="column is-3 is-offset-3">
                 
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        {% for medicament in medicaments %}
+        {% for activite in activites %}
             <div class="columns">
                 <div class="column is-1">
             
@@ -43,31 +43,28 @@
                 <div class="column">
                     <div class="box">
                 <article class="media">
-                    <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-      </figure>
-    </div>
                     <div class="media-content">
                         <div class="content">
                             <p>
-                                <strong>N° {{ medicament.id }} : {{ medicament.libelle }}</strong>
+                                <strong>Activité n° {{ activite.id }}</strong>
                                 <br>
-                                Dépot légal : {{ medicament.medDepotLegal }}
+                                Date : {{ activite.date | date("d/m/Y")}}
                                 <br>
-                                Date d'ajout : {{ medicament.dateAjout | date("d/m/Y") }}
+                                Lieu : {{ activite.lieu }}
                                 <br>
-                                {{ medicament.description }}
+                                Theme : {{ activite.theme }}
+                                <br>
+                                <a href=" {{ path("showActivite", { "id" : activite.id } ) }}">Voir plus</a>
                             </p>
                         </div>
                         <nav class="level is-mobile">
                             <div class="level-left">
-                                <a href="{{ path("modifierMedicament", {"id" : medicament.id }) }}"class="level-item" aria-label="modifier">
+                                <a href="{{ path("modifierMedicament", {"id" : activite.id }) }}"class="level-item" aria-label="Modifier">
                                     <span class="icon is-small">
                                         <i class="fas fa-wrench"></i>
                                     </span>
                                 </a>
-                                <a href="{{ path("supprimerMedicament", {"id" : medicament.id }) }}" class="level-item" aria-label="suprimer">
+                                <a href="{{ path("supprimerMedicament", {"id" : activite.id }) }}" class="level-item" aria-label="Suprimer">
                                     <span class="icon is-small">
                                         <i class="fas fa-times"></i>
                                     </span>

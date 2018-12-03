@@ -19,6 +19,15 @@ class RapportVisiteRepository extends ServiceEntityRepository
         parent::__construct($registry, RapportVisite::class);
     }
 
+    public function findManyByText($search)     
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.rap_motif LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return RapportVisite[] Returns an array of RapportVisite objects
     //  */
