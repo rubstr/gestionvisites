@@ -24,6 +24,7 @@ class PraticienController extends AbstractController
     }
     /**
      * @Route("/praticien/new", name="praticien_create")
+     * @Route("/praticien/{id}/modifier", name="praticien_modif")
      */
     public function form(Praticien $praticien = null, $ajout=false, ObjectManager $manager, Request $request)
     {
@@ -50,5 +51,17 @@ class PraticienController extends AbstractController
             'formPraticien' => $form->createView(),
             'ajout' => $ajout
         ]);         
+    }
+    /**
+     * @Route("/praticien/{id}/supprimer", name="praticien_suppr")
+     */
+    public function remove(PraticienRepository $repo, $id, ObjectManager $manager)
+    {
+        $praticien = $repo->find($id);
+        dump($praticien);
+        $manager->remove($praticien);
+        $manager->flush();
+
+        return $this->redirectToRoute('praticien');
     }
 }
