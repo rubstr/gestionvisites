@@ -21,7 +21,7 @@ class ApplicationRapportController extends AbstractController
      */
     public function index()
     {
-        return $this->render('application_rapport/home.html.twig', [
+        return $this->render('application_rapport/index.html.twig', [
             'controller_name' => 'ApplicationRapportController',
         ]);
     }

@@ -31,7 +31,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="simple_array")
      */
-    private $roles = ['ROLE_USER'];
+    private $roles = ['ROLE_VISITEUR'];
 
     public function getId(): ?int
     {
