@@ -36,7 +36,7 @@ class User implements UserInterface
      /**
      * @ORM\Column(type="string", length=255)
      */
-    private $couleur = "navbar is-info";
+    private $couleur = "is-info";
 
     public function getId(): ?int
     {

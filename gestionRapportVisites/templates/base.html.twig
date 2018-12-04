@@ -50,7 +50,7 @@
                             </span>
                         </a>
                             {% endif %}
-                             {%  if  is_granted('ROLE_ADMIN') or is_granted('ROLE_DEV')  %}
+                             {%  if  is_granted('ROLE_ADMIN') %}
                         <a href="{{ path("medicament") }}"class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-capsules"></i>

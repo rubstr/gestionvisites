@@ -29,12 +29,12 @@ class Praticien
     private $pra_prenom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praticien")
+     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praticien", cascade={"remove"})
      */
     private $rapportVisites;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="praticien")
+     * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="praticien", cascade={"remove"})
      */
     private $inviters;
 
