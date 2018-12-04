@@ -34,7 +34,6 @@ class RapportVisiteType extends AbstractType
             /*->add('visiteur')*/
             ->add('praticien', EntityType::class,[
                 'class' => Praticien::class,
-                'choice_label' => 'getFullName',
                 'attr' => [
                     'class' => 'select is-medium is-rounded',
                     'placeholder' => 'Motif du rapport'
