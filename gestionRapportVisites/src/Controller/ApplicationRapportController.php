@@ -2,16 +2,20 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\RapportVisite;
 use App\Form\RapportVisiteType;
 use App\Repository\RapportVisiteRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ApplicationRapportController extends AbstractController
 {
+
+
     /**
      * @Route("/", name="home")
      */
@@ -25,11 +29,35 @@ class ApplicationRapportController extends AbstractController
     /**
      * @Route("/liste_rapport", name="listerapport")
      */
-    public function Rapports(RapportVisiteRepository $repo){
+    public function Rapports(RapportVisiteRepository $repo,Request $request, ObjectManager $manager){
+
+        $form = $this->createFormBuilder(array('message' => 'search'))
+        ->add('search', TextType::class, [
+            'attr' => [
+                'class' => 'input is-hovered',
+                'placeholder' => 'Rechercher par titre ou praticien'
+            ],
+            'label' => false,
+            'required' => false
+        ])
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            return $this->render('application_rapport/listerapport.html.twig', [
+                'controller_name' => 'ApplicationRapportController',
+                'rapports' =>  $repo->findManyByText($data['search']),
+                'sForm' => $form->createView(),
+            ]);
+        }
 
         return $this->render('application_rapport/listerapport.html.twig', [
-            'controller_name' => "SiteController",
-            'rapports' => $repo->findAll()
+            'controller_name' => "ApplicationRapportController",
+            'rapports' => $repo->findAll(),
+            'sForm' => $form->createView(),
         ]);
 
     }
@@ -47,6 +75,9 @@ class ApplicationRapportController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $rapport->setRapDate(new DateTime());
+            dump($_SESSION);
+            $rapport->setVisiteur($this->getUser());
             $manager->persist($rapport);
             $manager->flush();
 
@@ -57,6 +88,19 @@ class ApplicationRapportController extends AbstractController
             'formRapportVisite' => $form->createView(),
             'editMode' => $rapport->getId()!== null
         ]);
+    }
+
+    /**
+     * @Route("/{id}/supprimer", name="removerapport")
+     */
+    public function remove(RapportVisiteRepository $repo, $id, ObjectManager $manager)
+    {
+        $rapport = $repo->find($id);
+        dump($rapport);
+        $manager->remove($rapport);
+        $manager->flush();
+
+        return $this->redirectToRoute('listerapport');
     }
 
 

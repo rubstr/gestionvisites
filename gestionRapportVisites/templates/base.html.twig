@@ -37,6 +37,9 @@
                                 &nbspAccueil
                             </span>
                         </a>
+                            {%  if not  is_granted('ROLE_ADMIN') %}
+                            
+                            
 
                         <a href="{{ path("listerapport") }}" class="navbar-item">
                             <span class="icon">
@@ -46,7 +49,8 @@
                                 &nbspRapports
                             </span>
                         </a>
-
+                            {% endif %}
+                             {%  if  is_granted('ROLE_ADMIN') %}
                         <a href="{{ path("medicament") }}"class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-capsules"></i>
@@ -64,7 +68,8 @@
                                 &nbspPraticiens
                             </span>
                         </a>
-
+                        {% endif %}
+                        {%  if not  is_granted('ROLE_ADMIN') %}
                         <a href="{{ path("actvt_compl") }}"class="navbar-item">
                             <span class="icon">
                                 <i class="fas fa-comments"></i>
@@ -73,19 +78,21 @@
                                 &nbspActivités
                             </span>
                         </a>
-
+                        {% endif %}
                     </div>
                 </div>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
+                {% if app.user is not null %}
+                
                     <div class="buttons">
-                        <a class="button is-warning is-outlined is-rounded">
-                            Se connecter
+                        <a href="{{ path("logout")}}" class="button is-danger is-rounded">
+                            Se déconnecter
                         </a>
                     </div>
-                    
+                    {% endif %}
                 </div>
                     <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">

@@ -150,4 +150,5 @@ class RapportVisite
 
         return $this;
     }
+
 }
