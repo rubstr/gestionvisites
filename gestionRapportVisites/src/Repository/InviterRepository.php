@@ -47,14 +47,13 @@ class InviterRepository extends ServiceEntityRepository
         ;
     }
     */
-
-<<<<<<< HEAD
-    /*public function findParPraticien($id)
+    /*public function chercherInvitsPraticien($id)
     {
-        return $this->
+        return $this->createQueryBuilder('i')
+        ->andwhere('i.praticien.id = :id')
+        ->setParameter('id', $id)
+        ->getQuery()
+        ->getResult();
     }
     */
-=======
-    
->>>>>>> d5e32017ec70dd12fd90305bcee59a2c4ad12efa
 }
