@@ -18,10 +18,31 @@ body{
 
 .foot{
     padding: 2rem 2rem;
-    background-color: #209cee;
-    font-family: Montserrat,sans-serif;
     box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.is-info{
+    background-color: #209cee;
+    font-family: Montserrat,sans-serif;
+    color: #fff;
+
+}
+
+.is-warning{
+    background-color: #ffdd57;
+    font-family: Montserrat,sans-serif;
+    color: rgba(0,0,0,.7);
+
+}
+
+.is-success{
+    background-color: #23d160;
+    font-family: Montserrat,sans-serif;
+    color: #fff;
+
+}
+
+
 
 .corp{
     padding-top: 6%;

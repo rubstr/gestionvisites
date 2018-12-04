@@ -33,6 +33,11 @@ class User implements UserInterface
      */
     private $roles = ['ROLE_VISITEUR'];
 
+     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $couleur = "is-info";
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class User implements UserInterface
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
+
+        return $this;
+    }
+
+    public function getCouleur(): ?string
+    {
+        return $this->couleur;
+    }
+
+    public function setCouleur(string $couleur): self
+    {
+        $this->couleur = $couleur;
 
         return $this;
     }

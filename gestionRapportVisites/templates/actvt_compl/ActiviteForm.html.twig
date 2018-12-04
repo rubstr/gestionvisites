@@ -3,9 +3,9 @@
 {% block title %}Formulaire Activite{% endblock %}
 
 {% block body %}
-
+<div class="fondgris">
  <div class="container corp">
-        <h1 class="title is-3 has-text-white">Ajouter / Modifier un praticien</h1>
+        <h1 class="title is-3 has-text-white">{% if ajout == true %}Ajouter{% else %}Modifier{% endif %} un praticien</h1>
         <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
         
         <div class="box">
@@ -13,9 +13,10 @@
                 {{ form_row(form.date) }}
                 {{ form_row(form.lieu) }}
                 {{ form_row(form.theme) }}
-                <button type="submit" class="button is-primary" style="margin-top:6%;">Ajouter / Modifier</button>
+                {{ form_row(form.nom) }}
+                <button type="submit" class="button is-primary" style="margin-top:6%;">{% if ajout == true %}Ajouter{% else %}Modifier{% endif %}</button>
             {{ form_end(form) }}
         </div>
     </div>
-
+</div>
 {% endblock %}

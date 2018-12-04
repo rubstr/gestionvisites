@@ -15,6 +15,7 @@ class ActiviteComplType extends AbstractType
             ->add('date')
             ->add('lieu')
             ->add('theme')
+            ->add('nom')
             // ->add('visiteur')
         ;
     }
