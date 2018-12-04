@@ -19,7 +19,7 @@
             <div class="column is-1">
             </div>
             <div class="column is-3">
-                <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter évènement</span></a>
+                <a href="{{ path("ajouterActivite") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter évènement</span></a>
             </div>
             <div class="column is-3 is-offset-3">
                 
@@ -42,43 +42,43 @@
                 </div>
                 <div class="column">
                     <div class="box">
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>Activité n° {{ activite.id }}</strong>
-                                <br>
-                                Date : {{ activite.date | date("d/m/Y")}}
-                                <br>
-                                Lieu : {{ activite.lieu }}
-                                <br>
-                                Theme : {{ activite.theme }}
-                                <br>
-                                <a href=" {{ path("showActivite", { "id" : activite.id } ) }}">Voir plus</a>
-                            </p>
-                        </div>
-                        <nav class="level is-mobile">
-                            <div class="level-left">
-                                <a href="{{ path("modifierMedicament", {"id" : activite.id }) }}"class="level-item" aria-label="Modifier">
-                                    <span class="icon is-small">
-                                        <i class="fas fa-wrench"></i>
-                                    </span>
-                                </a>
-                                <a href="{{ path("supprimerMedicament", {"id" : activite.id }) }}" class="level-item" aria-label="Suprimer">
-                                    <span class="icon is-small">
-                                        <i class="fas fa-times"></i>
-                                    </span>
-                                </a>
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>Activité n° {{ activite.id }}</strong>
+                                        <br>
+                                        Date : {{ activite.date | date("d/m/Y")}}
+                                        <br>
+                                        Lieu : {{ activite.lieu }}
+                                        <br>
+                                        Theme : {{ activite.theme }}
+                                        <br>
+                                        <a href=" {{ path("showActivite", { "id" : activite.id } ) }}">Voir plus</a>
+                                    </p>
+                                </div>
+                                <nav class="level is-mobile">
+                                    <div class="level-left">
+                                        <a href="{{ path("modifierActivite", {"id" : activite.id }) }}"class="level-item" aria-label="Modifier">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-wrench"></i>
+                                            </span>
+                                        </a>
+                                        <a href="{{ path("supprimerActivite", {"id" : activite.id }) }}" class="level-item" aria-label="Suprimer">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-times"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </nav>
                             </div>
-                        </nav>
+                        </article>
                     </div>
-                </article>
+                </div>
+                <div class="column is-1">
+                </div>
             </div>
-        </div>
-        <div class="column is-1">
-        </div>
-        </div>
-    <br>
+            <br>
         {% endfor %}
 
     </div>
