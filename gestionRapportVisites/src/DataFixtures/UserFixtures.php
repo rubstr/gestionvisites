@@ -24,7 +24,7 @@ class UserFixtures extends Fixture
         $user->setIdentifiant('Liorleboss');
         $user->setPassword($this->encoder->encodePassword('test', null));
         $user->setRoles(['ROLE_ADMIN']);
-        
+        $user->setCouleur('navbar is-info');
         $manager->persist($user);
 
         
@@ -32,14 +32,14 @@ class UserFixtures extends Fixture
         $user->setIdentifiant('toto');
         $user->setPassword($this->encoder->encodePassword('test', null));
         $user->setRoles(['ROLE_VISITEUR']);
-        
+        $user->setCouleur('navbar is-info');
         $manager->persist($user);
 
         $user = new User();
         $user->setIdentifiant('DEV');
         $user->setPassword($this->encoder->encodePassword('DEV', null));
         $user->setRoles(['ROLE_DEV']);
-        
+        $user->setCouleur('navbar is-info');
         $manager->persist($user);
         $manager->flush();
     }

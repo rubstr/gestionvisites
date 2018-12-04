@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+        <nav class= "navbar {{app.user.couleur}}" role="navigation" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="#"><img src="{{asset("images/gsb.png")}}" width="75" height="28"></a>
@@ -102,18 +102,18 @@
                     </a>
 
                     <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="{{path("changecl",{"id":app.user.id,"couleur":"is-warning"})}}">
                         <span class="icon has-text-warning">
                             <i class="fas fa-circle"></i>
                         </span>
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="{{path("changecl",{"id":app.user.id,"couleur":"is-info"})}}">
                         <span class="icon has-text-info">
                             <i class="fas fa-circle"></i>
                         </span>
                     </a>
-                    <a class="navbar-item">
-                        <span class="icon has-text-danger">
+                    <a class="navbar-item" href="{{path("changecl",{"id":app.user.id,"couleur":"is-success"})}}">
+                        <span class="icon has-text-success">
                             <i class="fas fa-circle"></i>
                         </span>
                     </a>
@@ -126,7 +126,7 @@
 
 {% block body %}{% endblock %}
 
-<footer class="foot has-text-white">
+<footer class="foot {{app.user.couleur}}">
     <div class="container">
         <a href="#">Haut de page</a>
         <p>Pierron, Hanna, Richard, Sautron. 2018-2019</p>
