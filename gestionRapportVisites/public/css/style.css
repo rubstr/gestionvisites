@@ -6,19 +6,21 @@
 }
 
 body{
-    background-color: #363636;
+
+    background-image: url("../images/fondpage.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
+
 
 
 .foot{
     padding: 2rem 2rem;
     background-color: #209cee;
     font-family: Montserrat,sans-serif;
+    box-shadow: 0 -1px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .corp{
@@ -57,4 +59,14 @@ body{
 .imglog{
     margin-left: 1%;
     margin-top: 1%;
+}
+
+.fondgris{
+    background-color: #363636ec;
+}
+
+nav.navbar a, nav.navbar button {
+    color: #a2c4cb;
+    font-weight: 300;
+    transition: all .3s ease;
 }
