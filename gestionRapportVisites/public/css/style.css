@@ -38,3 +38,23 @@ body{
     height: 1.5px;
     margin: 3rem 0;
 }
+
+.corplogin{
+    padding-top: 15.1%;
+    padding-bottom: 18%;
+
+}
+
+.fondlogin{
+    background-image: url("../images/loginfond.jpg");
+    background-color: #363636;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imglog{
+    margin-left: 1%;
+    margin-top: 1%;
+}

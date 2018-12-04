@@ -35,12 +35,13 @@ security:
     # Note: Only the *first* access control that matches will be used
     role_hierarchy:
          ROLE_ADMIN: [ROLE_VISITEUR]
+         
     access_control:
          
          - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-         - { path: ^/$, roles: [ROLE_VISITEUR] }
-         - { path: ^/medicament, roles: [ROLE_ADMIN] }
-         - { path: ^/liste_rapport, roles: [ROLE_VISITEUR] }
-         - { path: ^/praticien, roles: [ROLE_ADMIN] }
+         - { path: ^/$, roles: [ROLE_VISITEUR,ROLE_DEV] }
+         - { path: ^/medicament, roles: [ROLE_ADMIN,ROLE_DEV] }
+         - { path: ^/liste_rapport, roles: [ROLE_VISITEUR,ROLE_DEV] }
+         - { path: ^/praticien, roles: [ROLE_ADMIN,ROLE_DEV] }
 
     

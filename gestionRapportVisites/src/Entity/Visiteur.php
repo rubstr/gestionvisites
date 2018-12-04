@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Visiteur;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VisiteurRepository")
@@ -130,5 +131,10 @@ class Visiteur
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->vis_nom . " " . $this->vis_prenom;
     }
 }
