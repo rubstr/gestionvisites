@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Praticien;
 use App\Form\PraticienType;
+//use App\Repository\InviterRepository;
 use App\Repository\PraticienRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -55,8 +56,10 @@ class PraticienController extends AbstractController
     /**
      * @Route("/praticien/{id}/supprimer", name="praticien_suppr")
      */
-    public function remove(PraticienRepository $repo, $id, ObjectManager $manager)
+    public function remove(PraticienRepository $repo, $id, ObjectManager $manager/*, InviterRepository $repoinv*/)
     {
+        //$rechercheinv = $repoinv->chercherInvitsPraticien($id);
+        // dump($rechercheinv);
         $praticien = $repo->find($id);
         dump($praticien);
         $manager->remove($praticien);
