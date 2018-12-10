@@ -25,7 +25,8 @@ class AppFixtures extends Fixture
             $medicament->setMedDepotLegal($faker->numberBetween(1,1000))
                         ->setDateAjout(new \DateTime())
                         ->setLibelle($faker->word())
-                        ->setDescription($faker->sentence());
+                        ->setDescription($faker->sentence())
+                        ->setImage($faker->imageUrl($width = 640, $height = 480));
             $medicaments[$i] = $medicament;
             $manager->persist($medicament);
         }
@@ -76,7 +77,9 @@ class AppFixtures extends Fixture
                     $activite->setDate(new \DateTime())
                              ->setLieu($faker->city())
                              ->setTheme($faker->word())
-                             ->AddVisiteur($visiteur);
+                             ->AddVisiteur($visiteur)
+                             ->setImage($faker->imageUrl($width = 640, $height = 480))
+                             ->setNom($faker->sentence());
                     $manager->persist($activite);
 
                     //Ajout invitation

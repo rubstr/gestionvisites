@@ -43,6 +43,16 @@ class ActiviteCompl
      */
     private $inviters;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Nom;
+
     public function __construct()
     {
         $this->visiteur = new ArrayCollection();
@@ -143,6 +153,30 @@ class ActiviteCompl
                 $inviter->setActiviteCompl(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->Nom;
+    }
+
+    public function setNom(string $Nom): self
+    {
+        $this->Nom = $Nom;
 
         return $this;
     }

@@ -29,7 +29,7 @@ class Praticien
     private $pra_prenom;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praticien", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praticien", cascade={"remove"} )
      */
     private $rapportVisites;
 
@@ -135,8 +135,8 @@ class Praticien
         return $this;
     }
 
-    public function __toString()
+    public function getFullName(): string
     {
-        return $this->pra_nom . ' ' . $this->pra_prenom;
+            return $this->pra_prenom . " " . $this->pra_nom;
     }
 }
