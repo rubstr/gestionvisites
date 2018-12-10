@@ -49,9 +49,24 @@ body{
     padding-bottom: 6%;
 }
 
-.corpform{
-    padding-top: 10%;
-    padding-bottom: 13%;
+.corpformrap{
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+}
+
+.corpformpra{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.corpformact{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.corpformmed{
+    padding-top: 10.6%;
+    padding-bottom: 13.7%;
 }
 
 .hr {
