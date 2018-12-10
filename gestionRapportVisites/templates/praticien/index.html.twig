@@ -3,19 +3,26 @@
 {% block title %}Liste des praticiens{% endblock %}
 
 {% block body %}
-<div class="fondgris">
+    <div class="fondgris">
     <div class="container corp">
 
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column">
+        <h1 class="title is-3 has-text-white">Liste des praticiens</h1>
+        <h1 class="subtitle is-5 has-text-white">----------------------------------</h1>
+
+            </div>
+            <div class="column is-1">
+            </div>
+        </div>
 
         <div class="columns">
         <div class="column is-1">
         </div>
-        <div class="column">
-        <h1 class="title is-3 has-text-white">Liste des praticiens</h1>
-        <h1 class="subtitle is-5 has-text-white">----------------------------------</h1>
-        </div>
-        <div class="column is-1">
-        </div>
+        <div class="column is-3">
+        <a href="{{ path("praticien_create") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un praticien</span></a>
         </div>
                 <div class="columns">
             <div class="column is-1">
@@ -25,29 +32,26 @@
             </div>
             <div class="column is-3 is-offset-3">
                 
-                    {{ form_start(searchForm) }}
-                    {{ form_row(searchForm.search) }}
+            {{ form_start(searchForm) }}
+            {{ form_row(searchForm.search) }}
                 
             </div>
             <div class="column is-1">
                 <button type="submit" class="button is-primary"><i class="fas fa-search"></i></button>
                 {{ form_end(searchForm) }}
             </div>
-            <div class="column is-1">
-            </div>
+        <div class="column is-1">
+        </div>
         </div>
 
         <br><br>
 
+        {% for praticien in praticiens %}
 
-
-
-        <div class="columns">
-        <div class="column is-1">
-        </div>
-
-        <div class="column">
-                            {% for praticien in praticiens %}
+                <div class="columns">
+                <div class="column is-1">
+                </div>
+                <div class="column">
         <div class="box">
             <article class="media">
 
@@ -78,6 +82,12 @@
                 </div>
             </article>
         </div>
+                </div>
+                <div class="column is-1">
+                </div>
+                </div>
+                <br>
+
         {% endfor %}
         </div>
         <div class="column is-1">

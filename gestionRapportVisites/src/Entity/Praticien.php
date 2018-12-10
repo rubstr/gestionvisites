@@ -135,7 +135,7 @@ class Praticien
         return $this;
     }
 
-    public function getFullName(): string
+    public function __ToString(): string
     {
             return $this->pra_prenom . " " . $this->pra_nom;
     }
