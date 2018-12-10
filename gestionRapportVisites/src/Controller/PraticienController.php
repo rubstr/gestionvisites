@@ -9,6 +9,7 @@ use App\Repository\PraticienRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PraticienController extends AbstractController
@@ -16,11 +17,35 @@ class PraticienController extends AbstractController
     /**
      * @Route("/praticien", name="praticien")
      */
-    public function index(PraticienRepository $repo)
+    public function index(PraticienRepository $repo, Request $request)
     {
+        $form = $this->createFormBuilder(array('message' => 'search'))
+        ->add('search', TextType::class, [
+            'attr' => [
+                'class' => 'input is-hovered',
+                'placeholder' => 'Rechercher par le nom'
+            ],
+            'label' => false,
+            'required' => false
+        ])
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            return $this->render('praticien/index.html.twig', [
+                'controller_name' => 'PraticienController',
+                'praticiens' =>  $repo->findManyByText($data['search']),
+                'searchForm' => $form->createView(),
+            ]);
+        }
+
         return $this->render('praticien/index.html.twig', [
             'controller_name' => 'PraticienController',
             'praticiens' => $repo->findAll(),
+            'searchForm' => $form->createView()
         ]);
     }
     /**

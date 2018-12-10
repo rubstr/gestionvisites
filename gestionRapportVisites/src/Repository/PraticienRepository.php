@@ -19,6 +19,19 @@ class PraticienRepository extends ServiceEntityRepository
         parent::__construct($registry, Praticien::class);
     }
 
+    /**
+     * @Return Retourne une liste de praticiens
+     */
+    public function findManyByText($search)     
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.pra_nom LIKE :search')
+            ->orWhere('p.pra_prenom LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Praticien[] Returns an array of Praticien objects
     //  */
