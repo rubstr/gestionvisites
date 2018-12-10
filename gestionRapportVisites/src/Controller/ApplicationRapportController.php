@@ -77,7 +77,7 @@ class ApplicationRapportController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $rapport->setRapDate(new DateTime());
             dump($_SESSION);
-            $rapport->setVisiteur($this->getUser());
+            // $rapport->setVisiteur($this->getUser());
             $manager->persist($rapport);
             $manager->flush();
 

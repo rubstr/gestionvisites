@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\ActiviteCompl;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ActiviteComplType extends AbstractType
@@ -12,7 +13,14 @@ class ActiviteComplType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date')
+            ->add('date', EntityType::class,[
+                'class' => ActiviteCompl::class,
+                'attr' => [
+                    'class' => 'select',
+                    'placeholder' => 'Motif du rapport'
+                ],
+                'label' => 'Motif'
+            ])
             ->add('lieu')
             ->add('theme')
             ->add('nom')
