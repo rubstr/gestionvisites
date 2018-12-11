@@ -3,21 +3,39 @@
 {% block title %}Liste praticiens{% endblock %}
 
 {% block body %}
-<div class="fondgris">
-    <div class="container corp">
-        <h1 class="title is-3 has-text-white">{% if ajout == true %}Ajouter{% else %}Modifier{% endif %} un praticien</h1>
-        <h1 class="subtitle is-5 has-text-white">------------------------------------ </h1>
-        
-        <div class="box">
+    <div class="fondgris">
+        <div class="container corpformpra">
 
-{{ form_start(formPraticien) }}
-    {{ form_row(formPraticien.pra_nom, {'label':'Nom du praticien : ','attr': {'placeholder':"Nom"}}) }}
-    {{ form_row(formPraticien.pra_prenom, {'label':'Prénom du praticien : ','attr': {'placeholder':"Prénom"}}) }}
-    <button type="submit" class="button is-primary" style="margin-top:2%;">{% if ajout == true %}Ajouter le praticien{% else %}Modifier le praticien{% endif %}</button>
-{{ form_end(formPraticien)}}
+            <div class="columns">
+                <div class="column is-2"></div>
+                <div class="column"></div>
+                <div class="column is-2"></div>
+            </div>
 
- </div>
+            <div class="columns">
+                <div class="column is-2"></div>
+                <div class="column">
+                    <div class="box">
+                        <h1 class="title is-3 has-text-dark margform">
+                            {% if ajout == true %}Ajouter{% else %}Modifier{% endif %}
+                            un praticien</h1>
+                        <h1 class="subtitle is-5 has-text-dark margform">------------------------------------
+                        </h1>
+                        <div class="margform">
+                            {{ form_start(formPraticien) }}
+                            {{ form_row(formPraticien.pra_nom, {'label':'Nom du praticien : ','attr': {'placeholder':"Nom"}}) }}
+                            {{ form_row(formPraticien.pra_prenom, {'label':'Prénom du praticien : ','attr': {'placeholder':"Prénom"}}) }}
+                            <button type="submit" class="button is-primary" style="margin-top:2%;">
+                                {% if ajout == true %}Ajouter le praticien{% else %}Modifier le praticien{% endif %}
+                            </button>
+                            {{ form_end(formPraticien)}}
+                        </div>
 
-    </div>
+                    </div>
+                </div>
+                <div class="column is-2"></div>
+            </div>
+
+        </div>
     </div>
 {% endblock %}

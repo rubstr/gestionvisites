@@ -19,31 +19,39 @@ class Medicament
     private $id;
 
     /**
+     * @var string numero de depot legal
      * @ORM\Column(type="string", length=255)
      */
     private $med_depot_legal;
 
     /**
+     * @var date
      * @ORM\Column(type="date")
      */
     private $date_ajout;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $libelle;
 
     /**
+     * @var string
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
+     * Objet referancant un medicament et sa quantite offerte a un praticien lors d'une visite
+     * 
+     * @var collection|offrir[]
      * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medicament")
      */
     private $offrirs;
 
     /**
+     * @var string fournir un URL
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;

@@ -19,21 +19,29 @@ class Praticien
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $pra_nom;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $pra_prenom;
 
     /**
+     * Compte-rendu de visite
+     * 
+     * @var collection|rapportVisite[]
      * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praticien", cascade={"remove"} )
      */
     private $rapportVisites;
 
     /**
+     * Lie un praticien a une activite
+     * 
+     * @var collection|inviter[]
      * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="praticien", cascade={"remove"})
      */
     private $inviters;
@@ -135,7 +143,7 @@ class Praticien
         return $this;
     }
 
-    public function getFullName(): string
+    public function __ToString(): string
     {
             return $this->pra_prenom . " " . $this->pra_nom;
     }

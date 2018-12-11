@@ -35,6 +35,10 @@ body{
 
 }
 
+.margform{
+    padding: 0% 2%;
+}
+
 .is-success{
     background-color: #23d160;
     font-family: Montserrat,sans-serif;
@@ -42,16 +46,33 @@ body{
 
 }
 
-
+.formpad1{
+    padding-right: 50%;
+}
 
 .corp{
     padding-top: 6%;
     padding-bottom: 6%;
 }
 
-.corpform{
-    padding-top: 10%;
-    padding-bottom: 13%;
+.corpformrap{
+    padding-top: 7.8%;
+    padding-bottom: 7.8%;
+}
+
+.corpformpra{
+    padding-top: 13%;
+    padding-bottom: 13.7%;
+}
+
+.corpformact{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.corpformmed{
+    padding-top: 12%;
+    padding-bottom: 10.5%;
 }
 
 .hr {

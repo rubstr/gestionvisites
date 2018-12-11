@@ -9,7 +9,7 @@
 <div class="fondgris">
     <div class="container corp">
         <div class="columns">
-            <div class="column is-1">
+            <div class="column is-2">
             </div>
             <div class="column">
                 <a href=""><h1 class="title is-3 has-text-white">Liste des médicaments</h1></a>
@@ -20,12 +20,12 @@
         </div>
 
         <div class="columns">
-            <div class="column is-1">
+            <div class="column is-2">
             </div>
             <div class="column is-3">
                 <a href="{{ path("ajouterMedicament") }}" class="button is-primary"><span class="icon"><i class="fas fa-plus"></i></span><span>Ajouter un médicament</span></a>
             </div>
-            <div class="column is-3 is-offset-3">
+            <div class="column is-3 is-offset-1">
                 
             {{ form_start(searchForm, {attr: {'id': 'idjava'}})}}
                     {{ form_row(searchForm.search) }}
@@ -60,12 +60,16 @@
             <div class="column is-1">
             </div>
         </div>
+<<<<<<< HEAD
  
        
+=======
+        <br><br>
+>>>>>>> 14eea87853a69f0849ff5647109485ded2d07a77
 
         {% for medicament in medicaments %}
             <div class="columns">
-                <div class="column is-1">
+                <div class="column is-2">
             
                 </div>
                 <div class="column">
@@ -106,10 +110,10 @@
                 </article>
             </div>
         </div>
-        <div class="column is-1">
+        <div class="column is-2">
         </div>
         </div>
-    <br>
+    <br><br>
         {% endfor %}
 
     </div>
