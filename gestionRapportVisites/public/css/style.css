@@ -112,3 +112,7 @@ nav.navbar a, nav.navbar button {
     font-weight: 300;
     transition: all .3s ease;
 }
+
+.btnlog{
+    align-items: center;
+}
