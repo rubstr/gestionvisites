@@ -52,14 +52,14 @@ class AppFixtures extends Fixture
                     ->setRapDate(new \DateTime());
                     
             //Ajout offre de medicament
-            for($k=0;$k<= mt_rand(1,3);$k++)
+           /* for($k=0;$k<= mt_rand(1,3);$k++)
             {
                 $offrir = new Offrir();
                 $offrir->setMedicament($medicaments[mt_rand(0,10)])
                 ->setOffQte($faker->randomDigit())
                 ->setRapportVisite($rapport);
                 $manager->persist($offrir);
-            }
+            }*/
             
             //Ajout à la BDD
             $manager->persist($praticien);
