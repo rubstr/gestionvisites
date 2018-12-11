@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\Praticien;
+use App\Form\PraticienType;
+//use App\Repository\InviterRepository;
+use App\Repository\PraticienRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class PraticienController extends AbstractController
+{
+    /**
+     * @Route("/praticien", name="praticien")
+     */
+    public function index(PraticienRepository $repo, Request $request)
+    {
+        $form = $this->createFormBuilder(array('message' => 'search'))
+        ->add('search', TextType::class, [
+            'attr' => [
+                'class' => 'input is-hovered',
+                'placeholder' => 'Rechercher par le nom'
+            ],
+            'label' => false,
+            'required' => false
+        ])
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            return $this->render('praticien/index.html.twig', [
+                'controller_name' => 'PraticienController',
+                'praticiens' =>  $repo->findManyByText($data['search']),
+                'searchForm' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('praticien/index.html.twig', [
+            'controller_name' => 'PraticienController',
+            'praticiens' => $repo->findAll(),
+            'searchForm' => $form->createView()
+        ]);
+    }
+    /**
+     * Creation / Edition d'un praticien
+     * 
+     * @Route("/praticien/new", name="praticien_create")
+     * @Route("/praticien/{id}/modifier", name="praticien_modif")
+     */
+    public function form(Praticien $praticien = null, $ajout=false, ObjectManager $manager, Request $request)
+    {
+        if(!$praticien)
+        {
+            $praticien = new Praticien();
+            $ajout = true;  //Si = true, le contact est ajouté et non modifié
+        }
+
+        $form = $this->createForm(PraticienType::class, $praticien); //Création du form
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($praticien);
+            $manager->flush();
+
+           
+            return $this->redirectToRoute('praticien');
+        }
+
+        return $this->render('praticien/newpraticien.html.twig', [
+            'formPraticien' => $form->createView(),
+            'ajout' => $ajout
+        ]);         
+    }
+    /**
+     * Suppression d'un praticien 
+     * 
+     * @Route("/praticien/{id}/supprimer", name="praticien_suppr")
+     */
+    public function remove(PraticienRepository $repo, $id, ObjectManager $manager/*, InviterRepository $repoinv*/)
+    {
+        //$rechercheinv = $repoinv->chercherInvitsPraticien($id);
+        // dump($rechercheinv);
+        $praticien = $repo->find($id);
+        dump($praticien);
+        $manager->remove($praticien);
+        $manager->flush();
+
+        return $this->redirectToRoute('praticien');
+    }
+}
+
