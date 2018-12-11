@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/App.html">\App</a></li>
+                                                        <li><a href="../namespaces/DoctrineMigrations.html">\DoctrineMigrations</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">216</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#Controller\ActvtComplController.php"><i class="icon-file"></i> Controller\ActvtComplController.php</a></li>
+                                                                                                    <li><a href="#Controller\ApplicationRapportController.php"><i class="icon-file"></i> Controller\ApplicationRapportController.php</a></li>
+                                                                                                    <li><a href="#Controller\MedicamentController.php"><i class="icon-file"></i> Controller\MedicamentController.php</a></li>
+                                                                                                    <li><a href="#Controller\PraticienController.php"><i class="icon-file"></i> Controller\PraticienController.php</a></li>
+                                                                                                    <li><a href="#Controller\SecurityController.php"><i class="icon-file"></i> Controller\SecurityController.php</a></li>
+                                                                                                    <li><a href="#DataFixtures\AppFixtures.php"><i class="icon-file"></i> DataFixtures\AppFixtures.php</a></li>
+                                                                                                    <li><a href="#DataFixtures\UserFixtures.php"><i class="icon-file"></i> DataFixtures\UserFixtures.php</a></li>
+                                                                                                    <li><a href="#Entity\ActiviteCompl.php"><i class="icon-file"></i> Entity\ActiviteCompl.php</a></li>
+                                                                                                    <li><a href="#Entity\Inviter.php"><i class="icon-file"></i> Entity\Inviter.php</a></li>
+                                                                                                    <li><a href="#Entity\Medicament.php"><i class="icon-file"></i> Entity\Medicament.php</a></li>
+                                                                                                    <li><a href="#Entity\Offrir.php"><i class="icon-file"></i> Entity\Offrir.php</a></li>
+                                                                                                    <li><a href="#Entity\Praticien.php"><i class="icon-file"></i> Entity\Praticien.php</a></li>
+                                                                                                    <li><a href="#Entity\RapportVisite.php"><i class="icon-file"></i> Entity\RapportVisite.php</a></li>
+                                                                                                    <li><a href="#Entity\User.php"><i class="icon-file"></i> Entity\User.php</a></li>
+                                                                                                    <li><a href="#Entity\Visiteur.php"><i class="icon-file"></i> Entity\Visiteur.php</a></li>
+                                                                                                    <li><a href="#Form\ActiviteComplType.php"><i class="icon-file"></i> Form\ActiviteComplType.php</a></li>
+                                                                                                    <li><a href="#Form\InviterType.php"><i class="icon-file"></i> Form\InviterType.php</a></li>
+                                                                                                    <li><a href="#Form\MedicamentType.php"><i class="icon-file"></i> Form\MedicamentType.php</a></li>
+                                                                                                    <li><a href="#Form\OffrirType.php"><i class="icon-file"></i> Form\OffrirType.php</a></li>
+                                                                                                    <li><a href="#Form\PraticienType.php"><i class="icon-file"></i> Form\PraticienType.php</a></li>
+                                                                                                    <li><a href="#Form\RapportVisiteType.php"><i class="icon-file"></i> Form\RapportVisiteType.php</a></li>
+                                                                                                    <li><a href="#Kernel.php"><i class="icon-file"></i> Kernel.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181120164847.php"><i class="icon-file"></i> Migrations\Version20181120164847.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181126132254.php"><i class="icon-file"></i> Migrations\Version20181126132254.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181126132611.php"><i class="icon-file"></i> Migrations\Version20181126132611.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181204161113.php"><i class="icon-file"></i> Migrations\Version20181204161113.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181210085849.php"><i class="icon-file"></i> Migrations\Version20181210085849.php</a></li>
+                                                                                                    <li><a href="#Migrations\Version20181210090207.php"><i class="icon-file"></i> Migrations\Version20181210090207.php</a></li>
+                                                                                                    <li><a href="#Repository\ActiviteComplRepository.php"><i class="icon-file"></i> Repository\ActiviteComplRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\InviterRepository.php"><i class="icon-file"></i> Repository\InviterRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\MedicamentRepository.php"><i class="icon-file"></i> Repository\MedicamentRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\OffrirRepository.php"><i class="icon-file"></i> Repository\OffrirRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\PraticienRepository.php"><i class="icon-file"></i> Repository\PraticienRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\RapportVisiteRepository.php"><i class="icon-file"></i> Repository\RapportVisiteRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\UserRepository.php"><i class="icon-file"></i> Repository\UserRepository.php</a></li>
+                                                                                                    <li><a href="#Repository\VisiteurRepository.php"><i class="icon-file"></i> Repository\VisiteurRepository.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                            <a name="Controller\ActvtComplController.php" id="Controller\ActvtComplController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\ActvtComplController.php
+                            <small style="float: right;padding-right: 10px;">31</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for class \App\Controller\ActvtComplController</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $request is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $repo is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for method index()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>61</td>
+                                        <td>Argument $repo is missing from the Docblock of show</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>61</td>
+                                        <td>Argument $id is missing from the Docblock of show</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>Argument $request is missing from the Docblock of inviterPraticien</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>Argument $manager is missing from the Docblock of inviterPraticien</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>Argument $id is missing from the Docblock of inviterPraticien</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>77</td>
+                                        <td>Argument $repo is missing from the Docblock of inviterPraticien</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>103</td>
+                                        <td>Argument $id is missing from the Docblock of removeInviter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>103</td>
+                                        <td>Argument $manager is missing from the Docblock of removeInviter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>103</td>
+                                        <td>Argument $repo is missing from the Docblock of removeInviter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>117</td>
+                                        <td>Argument $manager is missing from the Docblock of ajouterOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>117</td>
+                                        <td>Argument $request is missing from the Docblock of ajouterOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>117</td>
+                                        <td>Argument $id is missing from the Docblock of ajouterOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>117</td>
+                                        <td>Argument $repo is missing from the Docblock of ajouterOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $idActivite is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $idOrganisateur is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $manager is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $repoVisiteur is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $request is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $repoActivite is missing from the Docblock of removeOrganisateur</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>165</td>
+                                        <td>Argument $activite is missing from the Docblock of formEvenement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>165</td>
+                                        <td>Argument $ajout is missing from the Docblock of formEvenement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>165</td>
+                                        <td>Argument $manager is missing from the Docblock of formEvenement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>165</td>
+                                        <td>Argument $request is missing from the Docblock of formEvenement</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>197</td>
+                                        <td>Argument $id is missing from the Docblock of removeActivite</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>197</td>
+                                        <td>Argument $repo is missing from the Docblock of removeActivite</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>197</td>
+                                        <td>Argument $manager is missing from the Docblock of removeActivite</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\ApplicationRapportController.php" id="Controller\ApplicationRapportController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\ApplicationRapportController.php
+                            <small style="float: right;padding-right: 10px;">11</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Controller\ApplicationRapportController</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>Argument $repo is missing from the Docblock of Rapports</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>Argument $request is missing from the Docblock of Rapports</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>Argument $manager is missing from the Docblock of Rapports</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>Argument $rapport is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>Argument $request is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>Argument $manager is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>104</td>
+                                        <td>Argument $repo is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>104</td>
+                                        <td>Argument $id is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>104</td>
+                                        <td>Argument $manager is missing from the Docblock of remove</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\MedicamentController.php" id="Controller\MedicamentController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\MedicamentController.php
+                            <small style="float: right;padding-right: 10px;">12</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for class \App\Controller\MedicamentController</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>Argument $repo is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>Argument $request is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for method index()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $medicament is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $ajout is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $manager is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $request is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>90</td>
+                                        <td>Argument $repo is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>90</td>
+                                        <td>Argument $id is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>90</td>
+                                        <td>Argument $manager is missing from the Docblock of remove</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\PraticienController.php" id="Controller\PraticienController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\PraticienController.php
+                            <small style="float: right;padding-right: 10px;">12</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Controller\PraticienController</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $repo is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $request is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for method index()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $praticien is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $ajout is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $manager is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $request is missing from the Docblock of form</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>88</td>
+                                        <td>Argument $repo is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>88</td>
+                                        <td>Argument $id is missing from the Docblock of remove</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>88</td>
+                                        <td>Argument $manager is missing from the Docblock of remove</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\SecurityController.php" id="Controller\SecurityController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\SecurityController.php
+                            <small style="float: right;padding-right: 10px;">10</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for class \App\Controller\SecurityController</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $authUtils is missing from the Docblock of index</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method index()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>No summary for method logout()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $id is missing from the Docblock of changecl</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $couleur is missing from the Docblock of changecl</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $repo is missing from the Docblock of changecl</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $manager is missing from the Docblock of changecl</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>Argument $request is missing from the Docblock of changecl</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="DataFixtures\AppFixtures.php" id="DataFixtures\AppFixtures.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            DataFixtures\AppFixtures.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for class \App\DataFixtures\AppFixtures</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>Argument $manager is missing from the Docblock of load</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for method load()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="DataFixtures\UserFixtures.php" id="DataFixtures\UserFixtures.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            DataFixtures\UserFixtures.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for class \App\DataFixtures\UserFixtures</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>Argument $manager is missing from the Docblock of load</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for method load()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for property $encoder</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\ActiviteCompl.php" id="Entity\ActiviteCompl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\ActiviteCompl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\Inviter.php" id="Entity\Inviter.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\Inviter.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\Medicament.php" id="Entity\Medicament.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\Medicament.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\Offrir.php" id="Entity\Offrir.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\Offrir.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\Praticien.php" id="Entity\Praticien.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\Praticien.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\RapportVisite.php" id="Entity\RapportVisite.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\RapportVisite.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\User.php" id="Entity\User.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\User.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Entity\Visiteur.php" id="Entity\Visiteur.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Entity\Visiteur.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\ActiviteComplType.php" id="Form\ActiviteComplType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\ActiviteComplType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for class \App\Form\ActiviteComplType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\InviterType.php" id="Form\InviterType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\InviterType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for class \App\Form\InviterType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\MedicamentType.php" id="Form\MedicamentType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\MedicamentType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for class \App\Form\MedicamentType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\OffrirType.php" id="Form\OffrirType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\OffrirType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for class \App\Form\OffrirType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\PraticienType.php" id="Form\PraticienType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\PraticienType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for class \App\Form\PraticienType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>33</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>33</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form\RapportVisiteType.php" id="Form\RapportVisiteType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form\RapportVisiteType.php
+                            <small style="float: right;padding-right: 10px;">7</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for class \App\Form\RapportVisiteType</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for method buildForm()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for method configureOptions()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Kernel.php" id="Kernel.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Kernel.php
+                            <small style="float: right;padding-right: 10px;">10</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for class \App\Kernel</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for method getCacheDir()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method getLogDir()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>No summary for method registerBundles()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>Argument $container is missing from the Docblock of configureContainer</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>Argument $loader is missing from the Docblock of configureContainer</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>No summary for method configureContainer()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $routes is missing from the Docblock of configureRoutes</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>No summary for method configureRoutes()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181120164847.php" id="Migrations\Version20181120164847.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181120164847.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181126132254.php" id="Migrations\Version20181126132254.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181126132254.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181126132611.php" id="Migrations\Version20181126132611.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181126132611.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181204161113.php" id="Migrations\Version20181204161113.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181204161113.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181210085849.php" id="Migrations\Version20181210085849.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181210085849.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Migrations\Version20181210090207.php" id="Migrations\Version20181210090207.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Migrations\Version20181210090207.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>Argument $schema is missing from the Docblock of up</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>13</td>
+                                        <td>No summary for method up()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $schema is missing from the Docblock of down</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method down()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\ActiviteComplRepository.php" id="Repository\ActiviteComplRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\ActiviteComplRepository.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\ActiviteComplRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $search is missing from the Docblock of findManyByText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method findManyByText()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\InviterRepository.php" id="Repository\InviterRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\InviterRepository.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\InviterRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\MedicamentRepository.php" id="Repository\MedicamentRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\MedicamentRepository.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\MedicamentRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $search is missing from the Docblock of findManyByText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method findManyByText()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\OffrirRepository.php" id="Repository\OffrirRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\OffrirRepository.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\OffrirRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\PraticienRepository.php" id="Repository\PraticienRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\PraticienRepository.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\PraticienRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $search is missing from the Docblock of findManyByText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for method findManyByText()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\RapportVisiteRepository.php" id="Repository\RapportVisiteRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\RapportVisiteRepository.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\RapportVisiteRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>Argument $search is missing from the Docblock of findManyByText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for method findManyByText()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\UserRepository.php" id="Repository\UserRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\UserRepository.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\UserRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository\VisiteurRepository.php" id="Repository\VisiteurRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository\VisiteurRepository.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \App\Repository\VisiteurRepository</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $registry is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/App.html">\App</a></li>
+                                                                            <li><a href="../namespaces/DoctrineMigrations.html">\DoctrineMigrations</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on December 11th, 2018 at 14:54.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
