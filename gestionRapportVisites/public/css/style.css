@@ -46,7 +46,9 @@ body{
 
 }
 
-
+.formpad1{
+    padding-right: 50%;
+}
 
 .corp{
     padding-top: 6%;
@@ -54,8 +56,8 @@ body{
 }
 
 .corpformrap{
-    padding-top: 7.5%;
-    padding-bottom: 7.5%;
+    padding-top: 7.8%;
+    padding-bottom: 7.8%;
 }
 
 .corpformpra{
