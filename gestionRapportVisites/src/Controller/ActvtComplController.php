@@ -54,6 +54,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Montre le detail d'une activite pour un ID
+     * 
      * @Route("/activite-complementaire/{id}", name="showActivite")
      */
     public function show(ActiviteComplRepository $repo, $id)
@@ -68,6 +70,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Invite un praticien à une activite
+     * 
      * @Route("/inviter-praticien/{id}", name="inviterPraticien")
      */
     public function inviterPraticien(Request $request, ObjectManager $manager, $id, ActiviteComplRepository $repo)
@@ -92,6 +96,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Supprime un praticien de l'activite
+     * 
      * @Route("/supprimer-invitation/{id}", name="removeInviter")
      */
     public function removeInviter($id, ObjectManager $manager, InviterRepository $repo)
@@ -104,6 +110,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Ajoute un visiteur a une activite
+     * 
      * @Route("/ajouter-organisateur/{id}", name="ajouterVisiteur")
      */
     public function ajouterOrganisateur(ObjectManager $manager, Request $request, $id, ActiviteComplRepository $repo)
@@ -133,6 +141,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Supprime un visiteur de l'activite 
+     * 
      * @Route("/activite-complementaire/{idActivite}/supprimer-organisateur/{idOrganisateur}", name="removeOrganisateur")
      */
     public function removeOrganisateur($idActivite, $idOrganisateur,ObjectManager $manager, VisiteurRepository $repoVisiteur, Request $request, ActiviteComplRepository $repoActivite)
@@ -147,6 +157,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Formulaire d'ajout / modification d'une activite
+     * 
      * @Route("/modifier-activite-complementaire/{id}", name="modifierActivite")
      * @Route("/ajouter-activite-complementaire/", name="ajouterActivite")
      */
@@ -178,6 +190,8 @@ class ActvtComplController extends AbstractController
     }
 
     /**
+     * Suppression d'une activite
+     * 
      * @Route("/supprimer-activite-complementaire/{id}", name="supprimerActivite")
      */
     public function removeActivite($id, ActiviteComplRepository $repo, ObjectManager $manager)

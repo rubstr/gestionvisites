@@ -49,6 +49,8 @@ class MedicamentController extends AbstractController
     }
 
     /**
+     * Creation / Edition d'un medicament
+     * 
      * @Route("/medicament/ajouter", name="ajouterMedicament")
      * @Route("/medicament/{id}/modifier", name="modifierMedicament")
      */
@@ -81,6 +83,8 @@ class MedicamentController extends AbstractController
     }
 
     /**
+     * Suppression medicament
+     * 
      * @Route("/medicament/{id}/supprimer", name="supprimerMedicament")
      */
     public function remove(MedicamentRepository $repo, $id, ObjectManager $manager)

@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Lie un praticien a une activite
+ * 
  * @ORM\Entity(repositoryClass="App\Repository\InviterRepository")
  * @ORM\Table(uniqueConstraints={
  *       @ORM\UniqueConstraint(name="praticien_invitation_unique", columns={"activite_compl_id","praticien_id"})
@@ -20,17 +22,20 @@ class Inviter
     private $id;
 
     /**
+     * @var string 
      * @ORM\Column(type="string", length=255)
      */
     private $specialisation;
 
     /**
+     * @var activiteCompl activite complementaire
      * @ORM\ManyToOne(targetEntity="App\Entity\ActiviteCompl", inversedBy="inviters")
      * @ORM\JoinColumn(nullable=false)
      */
     private $activiteCompl;
 
     /**
+     * @var praticien
      * @ORM\ManyToOne(targetEntity="App\Entity\Praticien", inversedBy="inviters")
      * @ORM\JoinColumn(nullable=false)
      */

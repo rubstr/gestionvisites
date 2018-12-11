@@ -17,6 +17,8 @@ class ApplicationRapportController extends AbstractController
 
 
     /**
+     * Visiblement, pas l'index
+     * 
      * @Route("/", name="home")
      */
     public function index()
@@ -27,6 +29,8 @@ class ApplicationRapportController extends AbstractController
     }
 
     /**
+     * Index
+     * 
      * @Route("/liste_rapport", name="listerapport")
      */
     public function Rapports(RapportVisiteRepository $repo,Request $request, ObjectManager $manager){
@@ -63,6 +67,8 @@ class ApplicationRapportController extends AbstractController
     }
 
     /**
+     * Creation / Edition d'un rapport 
+     * 
      * @Route("/create", name="ajoutrapport")
      * @route("/{id}/edit",  name="modifrapport")
      */
@@ -91,6 +97,8 @@ class ApplicationRapportController extends AbstractController
     }
 
     /**
+     * Suppression d'un rapport
+     * 
      * @Route("/{id}/supprimer", name="removerapport")
      */
     public function remove(RapportVisiteRepository $repo, $id, ObjectManager $manager)

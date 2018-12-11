@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
+ * 
  * @ORM\Entity(repositoryClass="App\Repository\OffrirRepository")
  * @ORM\Table(uniqueConstraints={
  *       @ORM\UniqueConstraint(name="medicament_offert_unique", columns={"rapport_visite_id","medicament_id"})
@@ -20,17 +22,24 @@ class Offrir
     private $id;
 
     /**
+     * Quantite de medicament offert
+     * 
+     * @var int
      * @ORM\Column(type="integer")
      */
     private $off_qte;
 
     /**
+     * Compte-rendu de la visite
+     * 
+     * @var rapportVisite
      * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="offrirs")
      * @ORM\JoinColumn(nullable=false)
      */
     private $rapportVisite;
 
     /**
+     * @var medicament
      * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="offrirs")
      * @ORM\JoinColumn(nullable=false)
      */

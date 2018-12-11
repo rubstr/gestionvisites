@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Compte-rendu de la visite
+ * 
  * @ORM\Entity(repositoryClass="App\Repository\RapportVisiteRepository")
  */
 class RapportVisite
@@ -19,33 +21,49 @@ class RapportVisite
     private $id;
 
     /**
+     * @var date 
      * @ORM\Column(type="date")
      */
     private $rap_date;
 
     /**
+     * Bilan du rapport
+     * 
+     * @var string
      * @ORM\Column(type="text")
      */
     private $rap_bilan;
 
     /**
+     * Motif du rapport
+     * 
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $rap_motif;
 
     /**
+     * Visiteur ayant effectué la visite
+     * 
+     * @var visiteur
      * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="rapportVisites")
      * @ORM\JoinColumn(nullable=false)
      */
     private $visiteur;
 
     /**
+     * Praticien concerne par la visite
+     * 
+     * @var praticien
      * @ORM\ManyToOne(targetEntity="App\Entity\Praticien", inversedBy="rapportVisites")
      * @ORM\JoinColumn(nullable=false)
      */
     private $praticien;
 
     /**
+     * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
+     * 
+     * @var collection|offrir[]
      * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapportVisite", orphanRemoval=true)
      */
     private $offrirs;
