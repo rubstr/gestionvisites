@@ -39,7 +39,7 @@ class Medicament
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medicament, cascade={"remove"}")
+     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medicament")
      */
     private $offrirs;
 
