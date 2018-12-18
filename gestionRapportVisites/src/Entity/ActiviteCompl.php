@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Activite complementaire, gerer par un/ des visiteur(s) a destination des praticiens
+ * 
  * @ORM\Entity(repositoryClass="App\Repository\ActiviteComplRepository")
  */
 class ActiviteCompl
@@ -19,36 +21,53 @@ class ActiviteCompl
     private $id;
 
     /**
+     * Date de l'activite 
+     * 
+     * @var date
      * @ORM\Column(type="date")
      */
     private $date;
 
     /**
+     * Lieu de l'activite 
+     * 
+     * @var string 
      * @ORM\Column(type="string", length=255)
      */
     private $lieu;
 
     /**
+     * Theme de l'activite 
+     * 
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $theme;
 
     /**
+     * Visiteur, organisateur de l'activite
+     * 
+     * @var visiteur
      * @ORM\ManyToMany(targetEntity="App\Entity\Visiteur", inversedBy="activiteCompls")
      */
     private $visiteur;
 
     /**
+     * Objet invitation, liant un praticien a une activite 
+     * 
+     * @var collection|inviter[]
      * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="activiteCompl", orphanRemoval=true)
      */
     private $inviters;
 
     /**
+     * @var string Fournir un URL
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $Nom;

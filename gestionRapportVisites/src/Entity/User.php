@@ -19,21 +19,33 @@ class User implements UserInterface
     private $id;
 
     /**
+     * Identifiant / login
+     * 
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $identifiant;
 
     /**
+     * Mot de passe
+     * 
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $password;
 
     /**
+     * Role de l'utilisateur
+     * 
+     * @var array
      * @ORM\Column(type="simple_array")
      */
     private $roles = ['ROLE_VISITEUR'];
 
      /**
+     * Couleur du theme choisi
+     * 
+     * @var string 
      * @ORM\Column(type="string", length=255)
      */
     private $couleur = "is-info";

@@ -49,6 +49,8 @@ class PraticienController extends AbstractController
         ]);
     }
     /**
+     * Creation / Edition d'un praticien
+     * 
      * @Route("/praticien/new", name="praticien_create")
      * @Route("/praticien/{id}/modifier", name="praticien_modif")
      */
@@ -79,6 +81,8 @@ class PraticienController extends AbstractController
         ]);         
     }
     /**
+     * Suppression d'un praticien 
+     * 
      * @Route("/praticien/{id}/supprimer", name="praticien_suppr")
      */
     public function remove(PraticienRepository $repo, $id, ObjectManager $manager/*, InviterRepository $repoinv*/)

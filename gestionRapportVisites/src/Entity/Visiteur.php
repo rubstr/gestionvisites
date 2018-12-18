@@ -20,21 +20,29 @@ class Visiteur
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $vis_nom;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $vis_prenom;
 
     /**
+     * Rapport rédigé
+     * 
+     * @var collection|rapportVisite[]
      * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="visiteur")
      */
     private $rapportVisites;
 
     /**
+     * Acitivite(s) que le visiteur a organise
+     * 
+     * @var collection|activiteCompl[]
      * @ORM\ManyToMany(targetEntity="App\Entity\ActiviteCompl", mappedBy="visiteur")
      */
     private $activiteCompls;

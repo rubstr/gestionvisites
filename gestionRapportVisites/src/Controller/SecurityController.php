@@ -33,7 +33,10 @@ class SecurityController extends AbstractController
     {
         
     }
-  /**
+
+    /**
+     * Permet de changer le theme du site
+     * 
      * @Route("/changecouleur/{id}/{couleur}", name="changecl")
      */
     public function changecl($id,$couleur, UserRepository $repo, ObjectManager $manager, Request $request)

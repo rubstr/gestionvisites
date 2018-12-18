@@ -116,3 +116,7 @@ nav.navbar a, nav.navbar button {
 .btnlog{
     align-items: center;
 }
+.centerform{
+    align-items: center;
+    padding: 0% 10%;
+}

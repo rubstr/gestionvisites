@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Medicament;
 use App\Form\MedicamentType;
+use App\Entity\PropertySearch;
+use App\Form\PropertySearchType;
 use App\Repository\MedicamentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -18,37 +20,33 @@ class MedicamentController extends AbstractController
      */
     public function index(MedicamentRepository $repo, Request $request)
     {
-        $form = $this->createFormBuilder(array('message' => 'search'))
-        ->add('search', TextType::class, [
-            'attr' => [
-                'class' => 'input is-hovered',
-                'placeholder' => 'Rechercher par le nom ou le dépot légal'
-            ],
-            'label' => false,
-            'required' => false
-        ])
-        ->getForm();
-
+        $search = new PropertySearch();
+        $form = $this->createForm(PropertySearchType::class, $search);
+            
         $form->handleRequest($request);
-
+       
+        // dump($form->getData());
         if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-
+            // $data = $form->getData();
+            $medocs=$repo->findCritere($search->getSearch(), $search->getDateSearch());
+            // $medocs=$repo->findManyByText($search->getSearch());
+            dump($medocs);
             return $this->render('medicament/index.html.twig', [
-                'controller_name' => 'MedicamentController',
-                'medicaments' =>  $repo->findManyByText($data['search']),
+                'medicaments' =>  $medocs,
                 'searchForm' => $form->createView(),
             ]);
         }
-
+        
         return $this->render('medicament/index.html.twig', [
             'controller_name' => 'MedicamentController',
             'medicaments' => $repo->findAll(),
-            'searchForm' => $form->createView()
+            'searchForm' => $form->createView(),     
         ]);
     }
 
     /**
+     * Creation / Edition d'un medicament
+     * 
      * @Route("/medicament/ajouter", name="ajouterMedicament")
      * @Route("/medicament/{id}/modifier", name="modifierMedicament")
      */
@@ -81,6 +79,8 @@ class MedicamentController extends AbstractController
     }
 
     /**
+     * Suppression medicament
+     * 
      * @Route("/medicament/{id}/supprimer", name="supprimerMedicament")
      */
     public function remove(MedicamentRepository $repo, $id, ObjectManager $manager)
