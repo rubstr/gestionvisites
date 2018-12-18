@@ -34,6 +34,12 @@
                             <div class="formpad1">
                             {{ form_row(formRapportVisite.rap_bilan) }}
                             </div>
+                            <div class="formpad1">
+                                {% for offrir in formRapportVisite.offrirs %}
+                                    {{ form_row(offrir.medicament) }}
+                                    {{ form_row(offrir.off_qte) }}
+                                {% endfor %}
+                            </div>
 
                             <div>
                             <button type="submit" class="button is-primary" style="margin-top:4%;">

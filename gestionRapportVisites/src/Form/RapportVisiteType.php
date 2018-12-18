@@ -2,6 +2,8 @@
 
 namespace App\Form;
 
+use App\Entity\Visiteur;
+use App\Form\OffrirType;
 use App\Entity\Praticien;
 use App\Entity\RapportVisite;
 use Symfony\Component\Form\AbstractType;
@@ -10,6 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class RapportVisiteType extends AbstractType
 {
@@ -31,13 +34,20 @@ class RapportVisiteType extends AbstractType
                 ],
                 'label' => 'Motif'
             ])
-            /*->add('visiteur')*/
+            ->add('visiteur', EntityType::class,[
+                'class' => Visiteur::class,
+            ])
             ->add('praticien', EntityType::class,[
                 'class' => Praticien::class,
                 'attr' => [
                     'placeholder' => 'Motif du rapport'
                 ]
             ])
+            ->add('offrirs', CollectionType::class, array(
+                'entry_type' => OffrirType::class,
+                'entry_options' => array('label' => false),
+                'required' => false,
+            ))
         ;
     }
 
