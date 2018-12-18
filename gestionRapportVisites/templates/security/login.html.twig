@@ -11,14 +11,13 @@
             <div class="column">
                 <div class="box">
                     <h1 class="my-4 title is-3 has-text-centered">Connexion</h1>
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
+                   
                     <div class="field">
                         <form action="{{ path('login') }}" method="post">
+                            
                             <label for="Identifiant">Identifiant</label>
                             <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="mytext" id="username" name="_username" value="{{ last_username }}" placeholder="Identifiant">
+                                <input {% if error %}class="input is-danger"{% endif %} class="input" type="mytext" id="username" name="_username" value="{{ last_username }}" placeholder="Identifiant">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user-alt"></i>
                                 </span>
@@ -31,12 +30,15 @@
                             <label for="password">Mot de Passe</label>
                             <p class="control has-icons-left">
 
-                                <input class="input" type="password" id="password" name="_password" placeholder="Password">
+                                <input {% if error %}class="input is-danger"{% endif %}  class="input" type="password" id="password" name="_password" placeholder="Password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </p>
                         </div>
+                         {% if error %}
+                        <div style="color:red;" class="has-text-centered"> Votre identifiant ou mot de passe est incorrect</div>
+                    {% endif %}
                         <input type="hidden" name="_target_path" value="{{ path('home') }}">
                         <div class="field">
                             <p class="control">

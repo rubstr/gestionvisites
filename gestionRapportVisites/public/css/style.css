@@ -112,3 +112,8 @@ nav.navbar a, nav.navbar button {
     font-weight: 300;
     transition: all .3s ease;
 }
+
+.centerform{
+    align-items: center;
+    padding: 0% 10%;
+}

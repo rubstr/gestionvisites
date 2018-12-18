@@ -30,9 +30,36 @@ class MedicamentRepository extends ServiceEntityRepository
             ->setParameter('search', '%'.$search.'%')
             ->getQuery()
             ->getResult();
-    }
-    
+        }
+    public function findByDate($search)     
+    {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.date_ajout= :search')
+            ->setParameter('search', $search)
+            ->getQuery()
+            ->getResult();
+        } 
+    public function findCritere($search=null, $searchDate=null)     
+    {
+        
+        $datefr =  \DateTime::createFromFormat('d/m/Y', $searchDate);
+        $searchDate =  $datefr ? $datefr->format('Y-m-d') : date('d/m/Y');
+        dump($search);
+        dump($searchDate);
+        $maRequete=$this->createQueryBuilder('m');
 
+        if($searchDate != null  ) {
+            $maRequete= $maRequete  ->andWhere('m.date_ajout= :datesearch')
+                                    ->setParameter('datesearch', $searchDate);
+        }
+        $maRequete=     $maRequete  ->andWhere('m.libelle LIKE :search or m.med_depot_legal LIKE :search')
+                                    
+                                    ->setParameter('search','%' .$search. '%')
+                                    ->getQuery()
+                                    ->getResult();
+     
+            return $maRequete;
+    } 
     // /**
     //  * @return Medicament[] Returns an array of Medicament objects
     //  */
