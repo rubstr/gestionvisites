@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
@@ -15,6 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Offrir
 {
     /**
+     * @Groups({"group1"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -24,6 +26,7 @@ class Offrir
     /**
      * Quantite de medicament offert
      * 
+     * @Groups({"group1"})
      * @var int
      * @ORM\Column(type="integer")
      */
@@ -32,6 +35,7 @@ class Offrir
     /**
      * Compte-rendu de la visite
      * 
+     * @Groups({"group1"})
      * @var rapportVisite
      * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="offrirs")
      * @ORM\JoinColumn(nullable=false)

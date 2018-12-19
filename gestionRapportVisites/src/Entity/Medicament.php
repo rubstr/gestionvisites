@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MedicamentRepository")
@@ -12,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Medicament
 {
     /**
+     * @Groups({"group1"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -19,30 +22,35 @@ class Medicament
     private $id;
 
     /**
+     * @Groups({"group1"})
      * @var string numero de depot legal
      * @ORM\Column(type="string", length=255)
      */
     private $med_depot_legal;
 
     /**
+     * @Groups({"group1"})
      * @var date
      * @ORM\Column(type="date")
      */
     private $date_ajout;
 
     /**
+     * @Groups({"group1"})
      * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $libelle;
 
     /**
+     * @Groups({"group1"})
      * @var string
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
+     * @Groups({"group1"})
      * Objet referancant un medicament et sa quantite offerte a un praticien lors d'une visite
      * 
      * @var collection|offrir[]
@@ -51,6 +59,7 @@ class Medicament
     private $offrirs;
 
     /**
+     * @Groups({"group1"})
      * @var string fournir un URL
      * @ORM\Column(type="string", length=255, nullable=true)
      */

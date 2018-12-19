@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Compte-rendu de la visite
@@ -14,6 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 class RapportVisite
 {
     /**
+     * @Groups({"group1"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -21,6 +23,7 @@ class RapportVisite
     private $id;
 
     /**
+     * @Groups({"group1"})
      * @var date 
      * @ORM\Column(type="date")
      */
@@ -29,12 +32,14 @@ class RapportVisite
     /**
      * Bilan du rapport
      * 
+     * @Groups({"group1"})
      * @var string
      * @ORM\Column(type="text")
      */
     private $rap_bilan;
 
     /**
+     * @Groups({"group1"})
      * Motif du rapport
      * 
      * @var string
