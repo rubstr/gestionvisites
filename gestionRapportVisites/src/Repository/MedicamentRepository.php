@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Medicament;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\AbstractRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Medicament|null find($id, $lockMode = null, $lockVersion = null)
@@ -12,7 +13,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Medicament[]    findAll()
  * @method Medicament[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MedicamentRepository extends ServiceEntityRepository
+class MedicamentRepository extends AbstractRepository
 {
     public function __construct(RegistryInterface $registry)
     {
@@ -38,7 +39,8 @@ class MedicamentRepository extends ServiceEntityRepository
             ->setParameter('search', $search)
             ->getQuery()
             ->getResult();
-        } 
+    }
+
     public function findCritere($search=null, $searchDate=null)     
     {
         
@@ -60,6 +62,15 @@ class MedicamentRepository extends ServiceEntityRepository
      
             return $maRequete;
     } 
+
+    public function search($limit = 20, $offset = 0)
+    {
+        $qb = $this->createQueryBuilder('m')
+                   ->select('m');
+        return $this->paginate($qb, $limit, $offset);
+    }
+    
+
     // /**
     //  * @return Medicament[] Returns an array of Medicament objects
     //  */
