@@ -2,20 +2,21 @@
 
 namespace App\Controller\Api;
 
-use App\Repository\MedicamentRepository;
-use FOS\RestBundle\Controller\Annotations\View;
-use FOS\RestBundle\Request\ParamFetcherInterface;
-// use Symfony\Component\Routing\Annotation\Route;
-use FOS\RestBundle\Controller\FOSRestController;
-use FOS\RestBundle\Controller\Annotations as Rest;
-// use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Medicament;
+use App\Repository\MedicamentRepository;
 use App\RepresentationApi\Representation;
-use Symfony\Component\Validator\ConstraintViolationList;
-use Symfony\Component\Validator\ConstraintViolation;
+// use Symfony\Component\Routing\Annotation\Route;
+use App\Exception\ResourceValidationException;
+use Doctrine\Common\Persistence\ObjectManager;
+// use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Request\ParamFetcherInterface;
+use FOS\RestBundle\Controller\Annotations as Rest;
+use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\Validator\ConstraintViolationList;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class MedicamentController extends FOSRestController
 {
@@ -60,9 +61,13 @@ class MedicamentController extends FOSRestController
      */
     public function createMedicament($medicament, ObjectManager $manager, ConstraintViolationList $violations)
     {
-        if(count($violations))
-        {
-            return $this->view($violations, Response::HTTP_BAD_REQUEST);
+        if (count($violations)) {
+            $message = 'The JSON sent contains invalid data. Here are the errors you need to correct: ';
+            foreach ($violations as $violation) {
+                $message .= sprintf("Field %s: %s ", $violation->getPropertyPath(), $violation->getMessage());
+            }
+
+            throw new ResourceValidationException($message);
         }
         $manager->persist($medicament);
         $manager->flush();
