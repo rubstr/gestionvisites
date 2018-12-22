@@ -5,7 +5,7 @@ namespace App\Controller\Api;
 use App\Repository\MedicamentRepository;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use Symfony\Component\Routing\Annotation\Route;
+// use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 // use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,6 +13,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Medicament;
 use App\RepresentationApi\Representation;
+use Symfony\Component\Validator\ConstraintViolationList;
+use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\HttpFoundation\Response;
 
 class MedicamentController extends FOSRestController
 {
@@ -32,9 +35,7 @@ class MedicamentController extends FOSRestController
      *     default="1",
      *     description="The pagination offset"
      * )
-     * @View(
-     *      serializerGroups= {"group1"}
-     * )
+     * @View()
      * 
      * @param MedicamentRepository $repo
      * @return array
@@ -45,10 +46,7 @@ class MedicamentController extends FOSRestController
             $paramFetcher->get('limit'),
             $paramFetcher->get('offset')
         );
-        // $medicaments = $repo->findAll();
-        // return new Representation($pager);
-        return $pager;
-        // return $medicaments;
+        return new Representation($pager);
     }
 
     /**
@@ -60,8 +58,12 @@ class MedicamentController extends FOSRestController
      * 
      * @return void
      */
-    public function createMedicament($medicament, ObjectManager $manager)
+    public function createMedicament($medicament, ObjectManager $manager, ConstraintViolationList $violations)
     {
+        if(count($violations))
+        {
+            return $this->view($violations, Response::HTTP_BAD_REQUEST);
+        }
         $manager->persist($medicament);
         $manager->flush();
 

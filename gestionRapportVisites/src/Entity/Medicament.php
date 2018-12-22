@@ -5,63 +5,76 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MedicamentRepository")
+ * 
+ * @ExclusionPolicy("all")
+ * 
  */
 class Medicament
 {
     /**
-     * @Groups({"group1"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * 
+     * @Expose
      */
     private $id;
 
     /**
-     * @Groups({"group1"})
      * @var string numero de depot legal
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Expose
+     * @Assert\NotBlank
      */
     private $med_depot_legal;
 
     /**
-     * @Groups({"group1"})
      * @var date
      * @ORM\Column(type="date")
+     * 
+     * @Expose
      */
     private $date_ajout;
 
     /**
-     * @Groups({"group1"})
      * @var string
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Expose
+     * @Assert\NotBlank
      */
     private $libelle;
 
     /**
-     * @Groups({"group1"})
      * @var string
      * @ORM\Column(type="text", nullable=true)
+     * 
+     * @Expose
      */
     private $description;
 
     /**
-     * @Groups({"group1"})
      * Objet referancant un medicament et sa quantite offerte a un praticien lors d'une visite
      * 
      * @var collection|offrir[]
      * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medicament")
+     * 
      */
     private $offrirs;
 
     /**
-     * @Groups({"group1"})
      * @var string fournir un URL
      * @ORM\Column(type="string", length=255, nullable=true)
+     * 
+     * @Expose
      */
     private $image;
 

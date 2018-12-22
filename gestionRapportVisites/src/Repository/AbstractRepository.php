@@ -14,7 +14,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 abstract class AbstractRepository extends ServiceEntityRepository
 {
     
-    protected function paginate(QueryBuilder $qb, $limit = 20, $offset = 0)
+    protected function paginate(QueryBuilder $qb, $limit = 20, $offset = 1)
     {
         
         if (0 == $limit || 0 == $offset) {

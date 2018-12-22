@@ -3,7 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
+// use Symfony\Component\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
@@ -16,29 +17,32 @@ use Symfony\Component\Serializer\Annotation\Groups;
 class Offrir
 {
     /**
-     * @Groups({"group1"})
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * 
+     * @serializer\Groups({"medicament"})
      */
     private $id;
 
     /**
      * Quantite de medicament offert
      * 
-     * @Groups({"group1"})
      * @var int
      * @ORM\Column(type="integer")
+     * 
+     * @serializer\Groups({"medicament"})
      */
     private $off_qte;
 
     /**
      * Compte-rendu de la visite
      * 
-     * @Groups({"group1"})
      * @var rapportVisite
      * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="offrirs")
      * @ORM\JoinColumn(nullable=false)
+     * 
+     * @serializer\Groups({"medicament"})
      */
     private $rapportVisite;
 
