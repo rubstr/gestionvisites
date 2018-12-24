@@ -10,7 +10,9 @@
             <div class="column is-1">
             </div>
             <div class="column">
-                <a href=""><h1 class="title is-3 has-text-white">Liste des rapports de visite</h1></a>
+                <a href="">
+                    <h1 class="title is-3 has-text-white">Liste des rapports de visite</h1>
+                </a>
                 <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
             </div>
             <div class="column is-1">
@@ -18,81 +20,83 @@
         </div>
 
         <div class="columns">
-        <div class="column is-1">
-        </div>
-        <div class="column is-3">
-        <a class="button is-primary" href="{{ path("ajoutrapport") }}">
-            
+            <div class="column is-1">
+            </div>
+            <div class="column is-3">
+                <a class="button is-primary" href="{{ path("ajoutrapport") }}">
+
                     <span class="icon">
                         <i class="fas fa-plus"></i>
                     </span>
                     <span>
                         Ajouter un rapport
                     </span>
-        </a>
-        </div>
+                </a>
+            </div>
             <div class="column is-3 is-offset-3">
-                
-            {{ form_start(sForm) }}
-            {{ form_row(sForm.search) }}
-                
+
+                {{ form_start(sForm) }}
+                {{ form_row(sForm.search) }}
+
             </div>
             <div class="column is-1">
                 <button type="submit" class="button is-primary"><i class="fas fa-search"></i></button>
                 {{ form_end(sForm) }}
             </div>
 
-        <div class="column is-1">
-        </div>
+            <div class="column is-1">
+            </div>
         </div>
 
         {% for rapport in rapports %}
         <br><br>
 
-                <div class="columns">
-                <div class="column is-1">
-                </div>
-                <div class="column">
-        <div class="box">
-            <article class="media">
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column">
+                <div class="box">
+                    <article class="media">
 
 
 
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <h4 class="title is-4"></p><strong>{{ rapport.id }}. {{ rapport.rapMotif }}</strong></h4>
-                            <h6 class="subtitle is-6">Date d'ajout : {{ rapport.RapDate | date('d/m/Y à H:i') }}</h6>
-                            Praticien : {{ rapport.praticien.praNom }} {{ rapport.praticien.praPrenom }}
-                            <br>Visiteur : {{ rapport.visiteur.visNom }} {{ rapport.visiteur.visPrenom }}
-                            <br><br> <a href="{{ path('showRapport', { 'id' : rapport.id }) }}">Voir plus</a>
-                        </p>
-                    </div>
-                    <nav class="level is-mobile">
-                        <div class="level-left">
-                            <a class="level-item" aria-label="modifier" href="{{ path('modifrapport', {'id':rapport.id}) }}">
-                                <span class="icon is-small">
-                                    <i class="fas fa-wrench"></i>
-                                </span>
-                            </a>
-                            <a class="level-item" aria-label="supprimer" href="{{ path('removerapport', {'id':rapport.id}) }} onclick="return confirm('Êtes-vous sûr ?')"">
-                                <span class="icon is-small">
-                                    <i class="fas fa-times"></i>
-                                </span>
-                            </a>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <h4 class="title is-4">
+                                </p><strong>{{ rapport.id }}. {{ rapport.rapMotif }}</strong></h4>
+                                <h6 class="subtitle is-6">Date d'ajout : {{ rapport.RapDate | date('d/m/Y à H:i') }}</h6>
+                                Praticien : {{ rapport.praticien.praNom }} {{ rapport.praticien.praPrenom }}
+                                <br>Visiteur : {{ rapport.visiteur.visNom }} {{ rapport.visiteur.visPrenom }}
+                                <br><br> <a href="{{ path('showRapport', { 'id' : rapport.id }) }}">Voir plus</a>
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="modifier" href="{{ path('modifrapport', {'id':rapport.id}) }}">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-wrench"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="supprimer" href="{{ path('removerapport', {'id':rapport.id}) }} onclick="
+                                        return confirm('Êtes-vous sûr ?')"">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
                         </div>
-                    </nav>
+                    </article>
                 </div>
-            </article>
+            </div>
+            <div class="column is-1">
+            </div>
         </div>
-                </div>
-                <div class="column is-1">
-                </div>
-                </div>
-                <br>
+        <br>
 
         {% endfor %}
 
     </div>
-    </div>
+</div>
 {% endblock %}

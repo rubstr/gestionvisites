@@ -10,7 +10,9 @@
             <div class="column is-1">
             </div>
             <div class="column">
-                <a href=""><h1 class="title is-3 has-text-white">Détail rapport visite</h1></a>
+                <a href="">
+                    <h1 class="title is-3 has-text-white">Détail rapport visite</h1>
+                </a>
                 <h1 class="subtitle is-5 has-text-white">----------------------------</h1>
             </div>
             <div class="column is-1">
@@ -19,64 +21,66 @@
 
         <br><br>
 
-                <div class="columns">
-                <div class="column is-1">
-                </div>
-                <div class="column">
-        <div class="box">
-            <article class="media">
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column">
+                <div class="box">
+                    <article class="media">
 
 
 
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <h4 class="title is-4"></p><strong>{{ rapport.id }}. {{ rapport.rapMotif }}</strong></h4>
-                            <h6 class="subtitle is-6">Date d'ajout : {{ rapport.RapDate | date('d/m/Y à H:i') }}</h6>
-                            <br>
-                            {{ rapport.rapBilan }}
-                            <br>
-                            <h1 class="title is-6">Liste des medicaments offerts:</h1>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <h4 class="title is-4">
+                                </p><strong>{{ rapport.id }}. {{ rapport.rapMotif }}</strong></h4>
+                                <h6 class="subtitle is-6">Date d'ajout : {{ rapport.RapDate | date('d/m/Y à H:i') }}</h6>
+                                <br>
+                                {{ rapport.rapBilan }}
+                                <br>
+                                <h1 class="title is-6">Liste des medicaments offerts:</h1>
                                 <table>
                                     <tr>
                                         <th>Libelle : </th>
                                         <th>Quantitée :</th>
                                     </tr>
-                            {% for offrir in rapport.offrirs %}
+                                    {% for offrir in rapport.offrirs %}
                                     <tr>
                                         <td>{{ offrir.medicament.libelle }}</td>
                                         <td>{{ offrir.offQte }}</td>
                                     </tr>
-                            {% endfor %}
+                                    {% endfor %}
                                 </table>
-                            <br>Praticien : {{ rapport.praticien.praNom }} {{ rapport.praticien.praPrenom }}
-                            <br>Visiteur : {{ rapport.visiteur.visNom }} {{ rapport.visiteur.visPrenom }}
-                            
-                        </p>
-                    </div>
-                    <nav class="level is-mobile">
-                        <div class="level-left">
-                            <a class="level-item" aria-label="modifier" href="{{ path('modifrapport', {'id':rapport.id}) }}">
-                                <span class="icon is-small">
-                                    <i class="fas fa-wrench"></i>
-                                </span>
-                            </a>
-                            <a class="level-item" aria-label="suprimer" href="{{ path('removerapport', {'id':rapport.id}) }} onclick="return confirm('Êtes-vous sûr ?')"">
-                                <span class="icon is-small">
-                                    <i class="fas fa-times"></i>
-                                </span>
-                            </a>
+                                <br>Praticien : {{ rapport.praticien.praNom }} {{ rapport.praticien.praPrenom }}
+                                <br>Visiteur : {{ rapport.visiteur.visNom }} {{ rapport.visiteur.visPrenom }}
+
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="modifier" href="{{ path('modifrapport', {'id':rapport.id}) }}">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-wrench"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="suprimer" href="{{ path('removerapport', {'id':rapport.id}) }} onclick="
+                                        return confirm('Êtes-vous sûr ?')"">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
                         </div>
-                    </nav>
+                    </article>
                 </div>
-            </article>
+            </div>
+            <div class="column is-1">
+            </div>
         </div>
-                </div>
-                <div class="column is-1">
-                </div>
-                </div>
-                <br>
+        <br>
 
     </div>
-    </div>
+</div>
 {% endblock %}

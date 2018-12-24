@@ -47,6 +47,7 @@ class RapportVisiteType extends AbstractType
                 'entry_type' => OffrirType::class,
                 'entry_options' => array('label' => false),
                 'required' => false,
+                'allow_add' => true,
             ))
         ;
     }

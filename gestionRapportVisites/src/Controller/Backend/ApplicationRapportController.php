@@ -69,7 +69,7 @@ class ApplicationRapportController extends AbstractController
     /**
      * Montre un rapport détaillé
      *
-     * @Route("/rapport/{id}", name="showRapport")
+     * @Route("/rapport/detail/{id}", name="showRapport")
      * 
      * @return void
      */
@@ -83,8 +83,8 @@ class ApplicationRapportController extends AbstractController
     /**
      * Creation / Edition d'un rapport 
      * 
-     * @Route("/create", name="ajoutrapport")
-     * @route("/{id}/edit",  name="modifrapport")
+     * @Route("/rapport/ajouter", name="ajoutrapport")
+     * @route("/rapport/{id}/edit",  name="modifrapport")
      */
     public function form(RapportVisite $rapport=null, Request $request, ObjectManager $manager){
         if (!$rapport) {
@@ -133,7 +133,7 @@ class ApplicationRapportController extends AbstractController
     /**
      * Suppression d'un rapport
      * 
-     * @Route("/{id}/supprimer", name="removerapport")
+     * @Route("/rapport/{id}/supprimer", name="removerapport")
      */
     public function remove(RapportVisiteRepository $repo, $id, ObjectManager $manager)
     {

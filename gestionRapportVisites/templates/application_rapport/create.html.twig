@@ -3,61 +3,86 @@
 {% block title %}Liste medicaments{% endblock %}
 
 {% block body %}
-    <div class="fondgris">
-        <div class="container corpformrap">
+<div class="fondgris">
+    <div class="container corpformrap">
 
-            <div class="columns">
-                <div class="column is-2"></div>
-                <div class="column">
-                    <div class="box">
-                        <div class="margform">
+        <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column">
+
+                <div class="box">
+                    <div class="margform">
+                        <h1 class="title is-3 has-text-dark margform">
                             {% if editMode == true %}
-                                <h1 class="title is-3 has-text-dark has-text-centered">Modifier un rapport de visite</h1>
+                            Modifier
                             {% else %}
-                                <h1 class="title is-3 has-text-dark has-text-centered">Ajouter un rapport de visite</h1>
+                            Ajouter
                             {% endif %}
-                            <h1 class="subtitle is-5 has-text-dark has-text-centered">----------------------------</h1>
-                            {{ form_start(formRapportVisite) }}
-                            <div>
-                            <div>
-                            {{ form_label(formRapportVisite.praticien) }}
+                            un rapport de visite</h1>
+                        <h1 class="subtitle is-5 has-text-dark margform">----------------------------</h1>
+                        {{ form_start(formRapportVisite) }}
+                        <div class="columns">
+                            <div class="column is-6">
+                                <div>
+                                    {{ form_label(formRapportVisite.praticien) }}
+                                </div>
+                                <div class="select">
+                                    {{ form_widget(formRapportVisite.praticien) }}
+                                </div>
                             </div>
-                            <div class="select">
-                            {{ form_widget(formRapportVisite.praticien) }}
+                            <div class="column is-6">
+                                <div>
+                                    {{ form_label(formRapportVisite.visiteur) }}
+                                </div>
+                                <div class="select">
+                                    {{ form_widget(formRapportVisite.visiteur )}}
+                                </div>
                             </div>
+                        </div>
+                        {{ form_row(formRapportVisite.rap_motif) }}
+                        <br>
+                        {{ form_row(formRapportVisite.rap_bilan) }}
+                        <br>
+                        {% set compteur = 0 %}
+                        {% for offrir in formRapportVisite.offrirs %}
+                        {% set compteur = compteur + 1 %}
+                        <div class="columns">
+                            <div class="column is-3">
+                                <div>
+                                    {{ form_label(offrir.medicament) }} {{ compteur }}
+                                </div>
+                                <div class="select">
+                                    {{ form_widget(offrir.medicament) }}
+                                </div>
                             </div>
-                            <br>
-                            <div class="formpad1">
-                            {{ form_row(formRapportVisite.rap_motif) }}
+                            <div class="column">
+                                <div>
+                                    {{ form_label(offrir.off_qte) }}
+                                </div>
+                                <div class="control">
+                                    {{ form_widget(offrir.off_qte) }}
+                                </div>
                             </div>
-                            <br>
-                            <div class="formpad1">
-                            {{ form_row(formRapportVisite.rap_bilan) }}
-                            </div>
-                            <div class="formpad1">
-                                {% for offrir in formRapportVisite.offrirs %}
-                                    {{ form_row(offrir.medicament) }}
-                                    {{ form_row(offrir.off_qte) }}
-                                {% endfor %}
-                            </div>
+                        </div>
+                        {% endfor %}
 
-                            <div>
+                        <div>
                             <button type="submit" class="button is-primary" style="margin-top:4%;">
                                 {% if editMode == true %}
-                                    Enregistrer les modifications
+                                Enregistrer les modifications
                                 {% else %}
-                                    Ajouter le rapport
+                                Ajouter le rapport
                                 {% endif %}
                             </button>
-                            </div>
-
-                            {{ form_end(formRapportVisite) }}
                         </div>
+
+                        {{ form_end(formRapportVisite) }}
                     </div>
                 </div>
-                <div class="column is-2"></div>
             </div>
-
+            <div class="column is-2"></div>
         </div>
+
     </div>
+</div>
 {% endblock %}

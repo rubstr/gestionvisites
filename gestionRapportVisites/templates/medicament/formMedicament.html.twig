@@ -3,34 +3,34 @@
 {% block title %}Liste medicaments{% endblock %}
 
 {% block body %}
-    <div class="fondgris">
-        <div class="container corpformmed">
+<div class="fondgris">
+    <div class="container corpformmed">
 
-            <div class="columns">
-                <div class="column is-2"></div>
-                <div class="column">
+        <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column">
 
-                    <div class="box">
-                        <h1 class="title is-3 has-text-dark margform">
+                <div class="box">
+                    <h1 class="title is-3 has-text-dark margform">
+                        {% if ajout == true %}Ajouter{% else %}Modifier{% endif %}
+                        un médicament</h1>
+                    <h1 class="subtitle is-5 has-text-dark margform">----------------------------</h1>
+                    <div class="margform">
+                        {{ form_start(formMedicament) }}
+                        {{ form_row(formMedicament.med_depot_legal) }}
+                        {{ form_row(formMedicament.libelle) }}
+                        {{ form_row(formMedicament.description) }}
+                        <button type="submit" class="button is-primary" style="margin-top:6%;">
                             {% if ajout == true %}Ajouter{% else %}Modifier{% endif %}
-                            un médicament</h1>
-                        <h1 class="subtitle is-5 has-text-dark margform">----------------------------</h1>
-                        <div class="margform">
-                            {{ form_start(formMedicament) }}
-                            {{ form_row(formMedicament.med_depot_legal) }}
-                            {{ form_row(formMedicament.libelle) }}
-                            {{ form_row(formMedicament.description) }}
-                            <button type="submit" class="button is-primary" style="margin-top:6%;">
-                                {% if ajout == true %}Ajouter{% else %}Modifier{% endif %}
-                            </button>
-                            {{ form_end(formMedicament) }}
-                        </div>
+                        </button>
+                        {{ form_end(formMedicament) }}
                     </div>
                 </div>
-                <div class="column is-2"></div>
             </div>
-
+            <div class="column is-2"></div>
         </div>
+
     </div>
+</div>
 
 {% endblock %}
