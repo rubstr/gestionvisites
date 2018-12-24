@@ -19,7 +19,7 @@
         <div class="columns">
             <div class="column is-1"></div>
             <div class="column is-3">
-                <a href="{{ path(" ajouteractivite") }}"="ajouterActivite" ) }}"" class="button is-primary">
+                <a href="{{ path("ajouterActivite") }}" class="button is-primary">
                     <span class="icon">
                         <i class="fas fa-plus"></i>
                     </span><span>Ajouter évènement</span></a>
@@ -61,20 +61,17 @@
                                     Theme :
                                     {{ activite.theme }}
                                     <br>
-                                    <a href=" {{ path(" showactivite", { "="showActivite", { "" id" : activite.id } ) }}"="id"
-                                        : activite.id } ) }}"">Voir plus</a>
+                                    <a href=" {{ path("showActivite", { "id" : activite.id } ) }}">Voir plus</a>
                                 </p>
                             </div>
                             <nav class="level is-mobile">
                                 <div class="level-left">
-                                    <a href="{{ path(" modifieractivite", {"="modifierActivite", {"" id" : activite.id }) }}"="id"
-                                        : activite.id }) }}"" class="level-item" aria-label="Modifier">
+                                    <a href="{{ path("modifierActivite", {"id" : activite.id }) }}" class="level-item" aria-label="Modifier">
                                         <span class="icon is-small">
                                             <i class="fas fa-wrench"></i>
                                         </span>
                                     </a>
-                                    <a href="{{ path(" supprimeractivite", {"="supprimerActivite", {"" id" : activite.id }) }}"="id"
-                                        : activite.id }) }}"" class="level-item" aria-label="Suprimer" onclick="return confirm('Êtes-vous sûr ?')">
+                                    <a href="{{ path("supprimerActivite", {"id" : activite.id }) }}" class="level-item" aria-label="Suprimer" onclick="return confirm('Êtes-vous sûr ?')">
                                         <span class="icon is-small">
                                             <i class="fas fa-times"></i>
                                         </span>
