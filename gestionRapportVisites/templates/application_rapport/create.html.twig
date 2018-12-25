@@ -1,5 +1,29 @@
 {% extends 'base.html.twig' %}
 
+{% import _self as renderJobMacro %}
+{% macro offrirs(offrir) %}
+<li>
+    <div class="columns">
+        <div class="column is-3">
+            <div>
+                {{ form_label(offrir.medicament) }}
+            </div>
+            <div class="select">
+                {{ form_widget(offrir.medicament) }}
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                {{ form_label(offrir.off_qte) }}
+            </div>
+            <div class="control">
+                {{ form_widget(offrir.off_qte) }}
+            </div>
+        </div>
+    </div>
+</li>
+{% endmacro %}
+
 {% block title %}Liste medicaments{% endblock %}
 
 {% block body %}
@@ -43,31 +67,14 @@
                         <br>
                         {{ form_row(formRapportVisite.rap_bilan) }}
                         <br>
-                        {% set compteur = 0 %}
-                        {% for offrir in formRapportVisite.offrirs %}
-                        {% set compteur = compteur + 1 %}
-                        <div class="columns">
-                            <div class="column is-3">
-                                <div>
-                                    {{ form_label(offrir.medicament) }} {{ compteur }}
-                                </div>
-                                <div class="select">
-                                    {{ form_widget(offrir.medicament) }}
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div>
-                                    {{ form_label(offrir.off_qte) }}
-                                </div>
-                                <div class="control">
-                                    {{ form_widget(offrir.off_qte) }}
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                        <ul class="offrir" data-prototype="{{ renderJobMacro.offrirs(formRapportVisite.offrirs.vars.prototype)|e('html_attr') }}">
+                            {% for offrir in formRapportVisite.offrirs %}
+                            {{ renderJobMacro.offrirs(offrir)}}
+                            {% endfor %}
+                        </ul>
 
                         <div>
-                            <button type="submit" class="button is-primary" style="margin-top:4%;">
+                            <button type="submit" class="button is-primary" style="margin-top:4%">
                                 {% if editMode == true %}
                                 Enregistrer les modifications
                                 {% else %}
@@ -85,4 +92,58 @@
 
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    var $collectionHolder;
+
+    // setup an "add a tag" link
+    var $addTagButton = $(
+        '<button type="button" class="add_tag_link button is-primary" style="margin-top:4%">Ajouter un medicament</button>'
+    );
+    var $newLinkLi = $('<li></li>').append($addTagButton);
+
+    jQuery(document).ready(function () {
+        // Get the ul that holds the collection of tags
+        $collectionHolder = $('ul.offrir');
+
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+        $addTagButton.on('click', function (e) {
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolder, $newLinkLi);
+        });
+    });
+
+    function addTagForm($collectionHolder, $newLinkLi) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+
+        // get the new index
+        var index = $collectionHolder.data('index');
+
+        var newForm = prototype;
+        // You need this only if you didn't set 'label' => false in your tags field in TaskType
+        // Replace '__name__label__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        // newForm = newForm.replace(/__name__label__/g, index);
+
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        newForm = newForm.replace(/__name__/g, index);
+
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+
+        // Display the form in the page in an li, before the "Add a tag" link li
+        var $newFormLi = $('<li></li>').append(newForm);
+        $newLinkLi.before($newFormLi);
+    }
+</script>
 {% endblock %}

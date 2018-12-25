@@ -38,6 +38,7 @@ Encore
     .addPlugin(new CopyWebpackPlugin([
         { from: './assets/images', to: 'images' }
     ]))
+    .autoProvidejQuery()
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())

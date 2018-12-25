@@ -90,13 +90,8 @@ class ApplicationRapportController extends AbstractController
         if (!$rapport) {
             $rapport = new RapportVisite();
 
-            $offrir1 = new Offrir();
-            $offrir2 = new Offrir();
-            $offrir3 = new Offrir();
-            
-            $rapport->addOffrir($offrir1);
-            $rapport->addOffrir($offrir2);
-            $rapport->addOffrir($offrir3);
+            $offrir = new Offrir();
+            $rapport->addOffrir($offrir);
         }
         $form = $this->createForm(RapportVisiteType::class, $rapport);
         
@@ -116,8 +111,6 @@ class ApplicationRapportController extends AbstractController
                     $manager->persist($offrir);
                 }
             }
-            // $rapport->setVisiteur($this->getUser());
-            dump($rapport);
             $manager->persist($rapport);
             $manager->flush();
 
