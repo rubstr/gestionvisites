@@ -20,6 +20,9 @@
                 {{ form_widget(offrir.off_qte) }}
             </div>
         </div>
+        <div class="column delete_medic">
+        <br>
+        </div>
     </div>
 </li>
 {% endmacro %}
@@ -67,7 +70,7 @@
                         <br>
                         {{ form_row(formRapportVisite.rap_bilan) }}
                         <br>
-                        <ul class="offrir" data-prototype="{{ renderJobMacro.offrirs(formRapportVisite.offrirs.vars.prototype)|e('html_attr') }}">
+                        <ul class="offrir" data-prototype="{{ renderJobMacro.offrirs(formRapportVisite.offrirs.vars.prototype)|e }}">
                             {% for offrir in formRapportVisite.offrirs %}
                             {{ renderJobMacro.offrirs(offrir)}}
                             {% endfor %}
@@ -108,6 +111,11 @@
         // Get the ul that holds the collection of tags
         $collectionHolder = $('ul.offrir');
 
+        // add a delete link to all of the existing tag form li elements
+        $collectionHolder.find('li').each(function() {
+            addTagFormDeleteLink($(this));
+        });
+
         // add the "add a tag" anchor and li to the tags ul
         $collectionHolder.append($newLinkLi);
 
@@ -141,9 +149,21 @@
         // increase the index with one for the next item
         $collectionHolder.data('index', index + 1);
 
+
         // Display the form in the page in an li, before the "Add a tag" link li
         var $newFormLi = $('<li></li>').append(newForm);
+        addTagFormDeleteLink($newFormLi);
         $newLinkLi.before($newFormLi);
     }
+
+    function addTagFormDeleteLink($tagFormLi) {
+    var $removeFormButton = $('<button class="delete is-medium" type="button"></button>');
+    $tagFormLi.find('.delete_medic').append($removeFormButton);
+
+    $removeFormButton.on('click', function(e) {
+        // remove the li for the tag form
+        $tagFormLi.remove();
+    });
+}
 </script>
 {% endblock %}

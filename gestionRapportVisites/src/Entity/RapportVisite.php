@@ -69,7 +69,7 @@ class RapportVisite
      * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
      * 
      * @var collection|offrir[]
-     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapportVisite", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapportVisite", orphanRemoval=true, cascade={"persist"})
      */
     private $offrirs;
 

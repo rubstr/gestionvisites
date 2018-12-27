@@ -90,31 +90,30 @@ class ApplicationRapportController extends AbstractController
         if (!$rapport) {
             $rapport = new RapportVisite();
 
-            $offrir = new Offrir();
-            $rapport->addOffrir($offrir);
+            // $offrir = new Offrir();
+            // $rapport->addOffrir($offrir);
         }
         $form = $this->createForm(RapportVisiteType::class, $rapport);
         
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $rapport->setRapDate(new DateTime());
-            dump($rapport);
-            foreach($rapport->getOffrirs() as $offrir)
-            {
-                if(!$offrir->getOffQte())
-                {
-                    $rapport->removeOffrir($offrir);
-                }
-                else
-                {
-                    $manager->persist($offrir);
-                }
-            }
+            // foreach($rapport->getOffrirs() as $offrir)
+            // {
+            //     if(!$offrir->getOffQte())
+            //     {
+            //         $rapport->removeOffrir($offrir);
+            //     }
+            //     else
+            //     {
+            //         $manager->persist($offrir);
+            //     }
+            // }
             $manager->persist($rapport);
             $manager->flush();
 
-            return $this->redirectToRoute('listerapport');
+            return $this->redirectToRoute('showRapport', [ 'id' => $rapport->getId()]);
         }
 
         return $this->render('application_rapport/create.html.twig',[
@@ -130,9 +129,7 @@ class ApplicationRapportController extends AbstractController
      */
     public function remove(RapportVisiteRepository $repo, $id, ObjectManager $manager)
     {
-        $rapport = $repo->find($id);
-        dump($rapport);
-        $manager->remove($rapport);
+        $manager->remove($repo->find($id));
         $manager->flush();
 
         return $this->redirectToRoute('listerapport');

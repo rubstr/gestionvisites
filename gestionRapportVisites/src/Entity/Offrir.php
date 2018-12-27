@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 // use Symfony\Component\Serializer\Annotation\Groups;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reference un medicament et sa quantite offerte a un praticien lors d'une visite
@@ -30,6 +31,7 @@ class Offrir
      * 
      * @var int
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      * 
      * @serializer\Groups({"medicament"})
      */
