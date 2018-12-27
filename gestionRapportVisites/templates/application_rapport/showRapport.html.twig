@@ -39,6 +39,10 @@
                                 <br>
                                 {{ rapport.rapBilan }}
                                 <br>
+                                {% if rapport.offrirs is empty %}
+                                <br><b>Aucun</b> médicament offert au cours de la visite.<br>
+                                
+                                {% else %}
                                 <h1 class="title is-6">Liste des medicaments offerts:</h1>
                                 <table>
                                     <tr>
@@ -52,6 +56,7 @@
                                     </tr>
                                     {% endfor %}
                                 </table>
+                                {% endif %}
                                 <br>Praticien : {{ rapport.praticien.praNom }} {{ rapport.praticien.praPrenom }}
                                 <br>Visiteur : {{ rapport.visiteur.visNom }} {{ rapport.visiteur.visPrenom }}
 

@@ -9,6 +9,10 @@
     font-family: Montserrat,sans-serif;
 }
 
+b{
+    font-weight:bold;
+}
+
 body{
 
     background-image: url("../images/fondpage.jpg");

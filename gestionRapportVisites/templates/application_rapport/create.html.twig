@@ -81,7 +81,7 @@
                                 {% if editMode == true %}
                                 Enregistrer les modifications
                                 {% else %}
-                                Ajouter le rapport
+                                Poster le rapport
                                 {% endif %}
                             </button>
                         </div>
@@ -103,9 +103,10 @@
 
     // setup an "add a tag" link
     var $addTagButton = $(
-        '<button type="button" class="add_tag_link button is-primary" style="margin-top:4%">Ajouter un medicament</button>'
+        '<button type="button" class="add_tag_link button is-link is-small" style="margin-bot:4%"><i class="fas fa-plus"></i>Ajouter un medicament</button>'
     );
     var $newLinkLi = $('<li></li>').append($addTagButton);
+    console.log($('<li></li>'));
 
     jQuery(document).ready(function () {
         // Get the ul that holds the collection of tags
@@ -117,7 +118,7 @@
         });
 
         // add the "add a tag" anchor and li to the tags ul
-        $collectionHolder.append($newLinkLi);
+        $collectionHolder.prepend($newLinkLi);
 
         // count the current form inputs we have (e.g. 2), use that as the new
         // index when inserting a new item (e.g. 2)
@@ -153,7 +154,7 @@
         // Display the form in the page in an li, before the "Add a tag" link li
         var $newFormLi = $('<li></li>').append(newForm);
         addTagFormDeleteLink($newFormLi);
-        $newLinkLi.before($newFormLi);
+        $newLinkLi.append($newFormLi);
     }
 
     function addTagFormDeleteLink($tagFormLi) {
