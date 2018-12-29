@@ -14,12 +14,26 @@ b{
 }
 
 body{
+    background: {
+        image: url("../images/fondpage.jpg");
+        attachment: fixed;
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    // background-image: url("../../images/fondpage.jpg");
+    // background-attachment: fixed;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+}
 
-    background-image: url("../images/fondpage.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+nav.navbar a{
+    nav.navbar button{
+        color: #a2c4cb;
+        font-weight: 300;
+        transition: all .3s ease;
+    }
 }
 
 
@@ -113,12 +127,6 @@ body{
 
 .fondgris{
     background-color: #363636ec;
-}
-
-nav.navbar a, nav.navbar button {
-    color: #a2c4cb;
-    font-weight: 300;
-    transition: all .3s ease;
 }
 
 .btnlog{
