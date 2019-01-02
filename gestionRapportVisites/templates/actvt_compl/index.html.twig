@@ -39,11 +39,11 @@
             <div class="column is-1"></div>
         </div>
         <br><br>
-        <div class="columns">
-            <div class="column is-1"></div>
+        <div class="columns is-multiline">
+            {# <div class="column is-1"></div> #}
             {% for activite in activites %}
 
-            <div class="column">
+            <div class="column is-3">
                 <div class="box">
                     <article class="media">
                         <div class="media-content">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             {% endfor %}
-            <div class="column is-1"></div>
+            {# <div class="column is-1"></div> #}
         </div>
 
     </div>

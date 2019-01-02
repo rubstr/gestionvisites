@@ -101,15 +101,13 @@
 <script>
     var $collectionHolder;
 
-    // setup an "add a tag" link
     var $addTagButton = $(
         '<button type="button" class="add_tag_link button is-link is-small" style="margin-bot:4%"><i class="fas fa-plus"></i>Ajouter un medicament</button>'
     );
     var $newLinkLi = $('<li></li>').append($addTagButton);
-    console.log($('<li></li>'));
 
     jQuery(document).ready(function () {
-        // Get the ul that holds the collection of tags
+        // Get the ul that holds the collection of offrir
         $collectionHolder = $('ul.offrir');
 
         // add a delete link to all of the existing tag form li elements
@@ -117,7 +115,7 @@
             addTagFormDeleteLink($(this));
         });
 
-        // add the "add a tag" anchor and li to the tags ul
+        // add the "ajouter un medicament" anchor and li to the tags ul
         $collectionHolder.prepend($newLinkLi);
 
         // count the current form inputs we have (e.g. 2), use that as the new
@@ -125,23 +123,19 @@
         $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
         $addTagButton.on('click', function (e) {
-            // add a new tag form (see next code block)
+            // add a new medicament form (see next code block)
             addTagForm($collectionHolder, $newLinkLi);
         });
     });
 
     function addTagForm($collectionHolder, $newLinkLi) {
-        // Get the data-prototype explained earlier
+        // Get the data-prototype 
         var prototype = $collectionHolder.data('prototype');
 
         // get the new index
         var index = $collectionHolder.data('index');
 
         var newForm = prototype;
-        // You need this only if you didn't set 'label' => false in your tags field in TaskType
-        // Replace '__name__label__' in the prototype's HTML to
-        // instead be a number based on how many items we have
-        // newForm = newForm.replace(/__name__label__/g, index);
 
         // Replace '__name__' in the prototype's HTML to
         // instead be a number based on how many items we have
@@ -151,7 +145,7 @@
         $collectionHolder.data('index', index + 1);
 
 
-        // Display the form in the page in an li, before the "Add a tag" link li
+        // Display the form in the page in an li, before the "Ajouter un medicament" link li
         var $newFormLi = $('<li></li>').append(newForm);
         addTagFormDeleteLink($newFormLi);
         $newLinkLi.append($newFormLi);
@@ -162,7 +156,7 @@
     $tagFormLi.find('.delete_medic').append($removeFormButton);
 
     $removeFormButton.on('click', function(e) {
-        // remove the li for the tag form
+        // remove the li for the medicament form
         $tagFormLi.remove();
     });
 }
